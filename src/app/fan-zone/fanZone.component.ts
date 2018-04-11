@@ -16,27 +16,30 @@ export class FanZoneComponent implements OnInit {
   usedProp: UsedProp;
   id: number;
 
-  constructor( private http: HttpClient) {
+  constructor(private http: HttpClient) {
 
   }
 
   ngOnInit() {
 
   }
-  getUsedProp(id: number) {
-    return this.http.get<UsedProp>('api/getPropUsed/1').subscribe(data => {
-      console.log(data.title);
-    });
-  }
-  getUsedProps() {
-    this.http.get<UsedProp[]>('/api/getPropNews').subscribe(data => this.usedProps);
-    console.log(this.usedProps);
 
-  }
-  getNewProp(id: number) {
-    return this.http.get<NewProp>('api/getPropNew/' + id).subscribe(data => {
-      console.log(data.title);
-    });
-  }
+  // getUsedProp(id: number) {
+  //   return this.http.get<UsedProp>('api/getPropUsed/1').subscribe(data => {
+  //     console.log(data.title);
+  //   });
+  // }
+  // getUsedProps() {
+  //   this.http.get<UsedProp[]>('/api/getPropNews').subscribe(data => this.usedProps);
+  //   console.log(this.usedProps);
+  //
+  // }
+  // getNewProp(id: number) {
+  //   return this.http.get<NewProp>('api/getPropNew/' + id).subscribe(data => {
+  //     console.log(data.title);
+  //   });
+  // }
+
+
 }
 

@@ -1,8 +1,8 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
 import {AppRouteModule} from './app-route.module';
 import {FormsModule} from '@angular/forms';
@@ -15,7 +15,6 @@ import {CreateAdComponent} from './fan-zone/create-ad/create-ad.component';
 import {BidListComponent} from './fan-zone/bid-list/bid-list.component';
 import {NewPropDetailComponent} from './fan-zone/new-prop-detail/new-prop-detail.component';
 import {PropService} from './fan-zone/prop.service';
-
 
 
 @NgModule({

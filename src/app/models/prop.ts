@@ -13,7 +13,7 @@ export class UsedProp {
 }
 export class NewProp {
   id: number;
-  title: string;
+  naslov: string;   // tittle
   opis: string;
   dateCreated: string;
   price: number;

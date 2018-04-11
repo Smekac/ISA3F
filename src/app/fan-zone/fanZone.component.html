@@ -1,8 +1,11 @@
 <div class="container-fluid">
   <div class="col-md-3">
 
-    <button type="button" class="btn btn-success" (click)="isCollapsed = !isCollapsed" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseNewAdd" >Postavi Oglas</button>
-    <div class="btn btn-primary">Aktivni Oglasi</div><br><br><br>
+    <button type="button" class="btn btn-success" (click)="isCollapsed = !isCollapsed"
+            [attr.aria-expanded]="!isCollapsed" aria-controls="collapseNewAdd">Postavi Oglas
+    </button>
+    <div class="btn btn-primary">Aktivni Oglasi</div>
+    <br><br><br>
     <div id="collapsenpNewAdd" [ngbCollapse]="!isCollapsed">
       <div class="card">
         <app-create-ad></app-create-ad>
@@ -12,20 +15,19 @@
   <div class="col-md-9">
     <ngb-tabset>
       <ngb-tab>
-        <ng-template ngbTabTitle><b>Zvanična prodavnica</b></ng-template>
+        <ng-template ngbTabTitle><b>Novi Rekviziti</b></ng-template>
         <ng-template ngbTabContent>
           <app-new-prop-list></app-new-prop-list>
         </ng-template>
       </ngb-tab>
       <ngb-tab>
-        <ng-template ngbTabTitle>Oglasi</ng-template>
+        <ng-template ngbTabTitle>Mali Oglasi</ng-template>
         <ng-template ngbTabContent>
           <app-used-prop-list></app-used-prop-list>
         </ng-template>
       </ngb-tab>
     </ngb-tabset>
   </div>
-
 
 
   <!--<div class="nav nav-tabs">-->
@@ -38,8 +40,6 @@
   <!--</div>-->
   <!--</form></li>-->
   <!--</div>-->
-
-
 
 
   <div *ngFor="let usedProp of usedProps | async">

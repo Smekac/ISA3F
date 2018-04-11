@@ -1,23 +1,25 @@
 <hr>
-  <div class="col-md-9">
-    <div
-      href="#"
-      class="list-group-item clearfix"
-      *ngFor="let newProp of newProps">
-      <div class="pull-left">
-        <h4 class="list-group-item-heading"><b>{{ newProp.title }}</b></h4>
-        <p class="list-group-item-text">{{ newProp.description }}</p>
-      </div>
-      <span class="pull-right">
+<div class="col-md-9">
+  <div
+    href="#"
+    class="list-group-item clearfix"
+    *ngFor="let newProp of newProps">
+    <div class="pull-left">
+      <a href="new-prop-detail/{{newProp.id}}"><h3 class="list-group-item-heading"><b>{{ newProp.naslov }}</b></h3></a>
+      <p class="list-group-item-text">{{ newProp.opis }}</p>
+      <br>
+      <p>{{newProp.show}}</p>
+    </div>
+    <span class="pull-right">
         <button class="btn btn-info" (click)="reservation(newProp.id)">REZERVIŠI</button>
       </span>
-      <span class="pull-right">
+    <span class="pull-right">
         <img
           [src]="newProp.image"
-          alt="{{ newProp.name }}"
+          alt="{{ newProp.show }}"
           class="img-responsive"
           style="height: 100px; width: 100px;">
       </span>
-    </div>
   </div>
+</div>
 

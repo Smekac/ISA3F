@@ -10,7 +10,9 @@ import {PropService} from '../prop.service';
 export class BidListComponent implements OnInit {
 
   @Input() bids: Bid[];
-  constructor(private propService: PropService) { }
+
+  constructor(private propService: PropService) {
+  }
 
   ngOnInit() {
 

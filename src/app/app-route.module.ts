@@ -6,8 +6,8 @@ import {FanZoneComponent} from './fan-zone/fanZone.component';
 import {UsedPropDetailComponent} from './fan-zone/used-prop-detail/used-prop-detail.component';
 
 const routes: Routes = [
-  {path: 'fan-zone/usedProp/:id', component: UsedPropDetailComponent },
-  {path: 'fan-zone/newProp/:id', component: NewPropDetailComponent },
+  {path: 'fan-zone/usedProp/:id', component: UsedPropDetailComponent},
+  {path: 'fan-zone/newProp/:id', component: NewPropDetailComponent},
   {path: 'fan-zone', component: FanZoneComponent}
 ]
 
@@ -16,7 +16,6 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)]
 })
 export class AppRouteModule {
-
 
 
 }
