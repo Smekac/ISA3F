@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Bid, NewProp} from '../models/prop';
+import {Bid, NewProp, UsedProp} from '../models/prop';
 
 @Injectable()
 export class PropService {
@@ -40,26 +40,34 @@ export class PropService {
 
   // ========================================================
 
+  // getUsedProps() {
+  //   return this.http.get('/api/nadjiKorisceniRekvizit');
+  // }
   getUsedProps() {
-    return this.http.get('/api/nadjiKorisceniRekvizit');
+    return this.http.get('/api/KorisceniRekvizit/sve');
   }
 
   reservation(id: number) {
-    this.http.get('/api/noviRekvizit/reservation/' + id, {observe: 'response'})
-      .subscribe(response => {
-        this.result = response.statusText;
-      });
-    return this.result;
+    return this.http.get('/api/KorisceniRekvizit/reserve/' + id, {observe: 'response'});
   }
 
   getBids(usedPropId: number) {
-    return this.http.get('/api/bids/usedProp/' + usedPropId);
+    return this.http.get('/api/bids/KorisceniRekvizit/' + usedPropId);
   }
 
   createBid(usedPropId: number, price: number) {
     const bid = {
       price: price
-    }
+    };
     return this.http.post('/api/bids/' + usedPropId, bid).subscribe();
   }
+
+  createUsedProp(usedProp: UsedProp) {
+    return this.http.post('/api/KorisceniRekvizit', usedProp, {observe: 'response'});
+  }
+
+
+  // ===================================================
+
+
 }

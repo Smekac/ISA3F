@@ -19,9 +19,45 @@ export class UsedPropListComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.propService.getUsedProps().subscribe(
+    //   (data: UsedProp[]) => {
+    //     this.usedProps = data
+    //   },
+    //   err => console.error(err),
+    //   () => console.log('Uspesno ucitani polovni rekviziti')
+    // );
+    this.getUsedProps();
+  }
+
+  // getBids(usedPropId: number) {
+  //   this.propService.getBids(usedPropId).subscribe(
+  //     (data: Bid[]) => {
+  //       this.bids = data
+  //     },
+  //     err => console.error(err),
+  //     () => console.log('Uspesno ucitane ponude za rekvizit' + usedPropId)
+  //   );
+  //   this.selectedProp = usedPropId;
+  //   console.log('selektovana' + this.selectedProp);
+  // }
+  //
+  // getBidColl(usedPropId: number) {
+  //   this.getBids(usedPropId);
+  //   this.isCollapsed = !this.isCollapsed;
+  // }
+  //
+  // createBid() {
+  //   this.propService.createBid(this.selectedProp, this.price);
+  //   this.isCollapsed = !this.isCollapsed;
+  //   this.getBids(this.selectedProp);
+  // }
+
+  // =========================
+
+  getUsedProps() {
     this.propService.getUsedProps().subscribe(
       (data: UsedProp[]) => {
-        this.usedProps = data
+        this.usedProps = data;
       },
       err => console.error(err),
       () => console.log('Uspesno ucitani polovni rekviziti')
@@ -31,7 +67,7 @@ export class UsedPropListComponent implements OnInit {
   getBids(usedPropId: number) {
     this.propService.getBids(usedPropId).subscribe(
       (data: Bid[]) => {
-        this.bids = data
+        this.bids = data;
       },
       err => console.error(err),
       () => console.log('Uspesno ucitane ponude za rekvizit' + usedPropId)
