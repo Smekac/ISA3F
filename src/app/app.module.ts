@@ -15,6 +15,9 @@ import {CreateAdComponent} from './fan-zone/create-ad/create-ad.component';
 import {BidListComponent} from './fan-zone/bid-list/bid-list.component';
 import {NewPropDetailComponent} from './fan-zone/new-prop-detail/new-prop-detail.component';
 import {PropService} from './fan-zone/prop.service';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import {KorisnikService} from './korisnik.service';
 
 
 @NgModule({
@@ -27,7 +30,9 @@ import {PropService} from './fan-zone/prop.service';
     NewPropDetailComponent,
     UsedPropDetailComponent,
     CreateAdComponent,
-    BidListComponent
+    BidListComponent,
+    RegisterComponent,
+    LoginComponent
   ],
 
   imports: [
@@ -37,7 +42,8 @@ import {PropService} from './fan-zone/prop.service';
     HttpClientModule,
     FormsModule
   ],
-  providers: [PropService],
+  providers: [PropService,
+              KorisnikService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

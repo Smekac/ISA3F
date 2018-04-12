@@ -4,12 +4,16 @@ import {NewPropDetailComponent} from './fan-zone/new-prop-detail/new-prop-detail
 
 import {FanZoneComponent} from './fan-zone/fanZone.component';
 import {UsedPropDetailComponent} from './fan-zone/used-prop-detail/used-prop-detail.component';
+import {LoginComponent} from './login/login.component';
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   {path: 'fan-zone/usedProp/:id', component: UsedPropDetailComponent},
   {path: 'fan-zone/newProp/:id', component: NewPropDetailComponent},
-  {path: 'fan-zone', component: FanZoneComponent}
-]
+  {path: 'fan-zone', component: FanZoneComponent},
+  {path: 'register', component: RegisterComponent},
+  {path: 'login', component: LoginComponent}
+];
 
 @NgModule({
   exports: [RouterModule],

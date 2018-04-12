@@ -8,19 +8,19 @@
       <li><a href="#" style="color: blue"> Stranica 1</a></li>
       <li><a href="#" style="color: blue"> Stranica 2</a></li>
       <li><a routerLink="/fan-zone" style="color: blue">Fan Zona</a></li>
-
     </ul>
+
     <ul class="nav navbar-nav navbar-collapse">
       <div class="row">
         <div class="col">
           <div ngbDropdown class="d-inline-block">
             <button style="height: 54px;width: 85px ;color: aqua;background: #091b50" class="btn btn-outline-primary"
-                    id="dropdownBasic1" ngbDropdownToggle>User
+                    id="dropdownBasic1" ngbDropdownToggle>Korisnik
             </button>
 
             <div ngbDropdownMenu>
-              <button class="zaDropDown"> Log in</button>
-              <button class="zaDropDown"> Log out</button>
+              <button routerLink="/login" class="zaDropDown"> Prijava</button>
+              <button routerLink="/register" class="zaDropDown"> Registracija</button>
               <button class="zaDropDown">Another action</button>
             </div>
           </div>
