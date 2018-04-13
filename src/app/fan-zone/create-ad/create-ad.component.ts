@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
+import {UsedProp} from '../../models/prop';
+import {PropService} from '../prop.service';
 
 const now = new Date();
 
@@ -9,12 +11,30 @@ const now = new Date();
   styleUrls: ['./create-ad.component.css']
 })
 export class CreateAdComponent implements OnInit {
-  model;
 
-  constructor() {
+  usedProp: UsedProp;
+
+  constructor(private propService: PropService) {
+    this.usedProp = new UsedProp();
   }
 
   ngOnInit() {
+  }
+
+  create() {
+    this.propService.createUsedProp(this.usedProp)
+      .subscribe(
+        resp => {
+          if ((resp.status === 201) || (resp.status === 200)) {
+            alert('Uspesno ste postavili oglas, ceka se potvrda administratora fan zone.');
+            window.location.reload();
+          }
+        },
+        err => {
+          alert('Greska prilikom kreiranja oglasa, pokusajte ponovo. == ' + this.usedProp.naslov  );
+        }
+
+        );
   }
 
 

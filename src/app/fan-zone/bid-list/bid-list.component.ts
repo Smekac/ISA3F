@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Bid} from '../../models/prop';
 import {PropService} from '../prop.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-bid-list',
@@ -11,11 +12,38 @@ export class BidListComponent implements OnInit {
 
   @Input() bids: Bid[];
 
-  constructor(private propService: PropService) {
-  }
+  idKoriscenogRekvizita: number;
+  koriscenRekvizit: boolean;
+  biddingFinished: boolean;
+
+  constructor(private propService: PropService, private router: Router) {}
+
+
 
   ngOnInit() {
+    this.bids = this.propService.bids;
+    this.koriscenRekvizit = this.propService.creatorUsedProp;
+    // this.aRoute.params.subscribe(params => {
+    //   this.idKoriscenogRekvizita = params['id'];
+    // });
+    this.biddingFinished = this.propService.biddingFinished;
+  }
 
+  acceptBid(bidId: number) {
+    this.propService.acceptBid(this.idKoriscenogRekvizita, bidId)
+      .subscribe(resp => {
+        if (resp.status === 204) {
+          alert('Uspesno ste izabrali pobednika licitacije');
+          // this.router.navigate(['fanpage/my-ads']);
+          window.location.reload();
+        } else {
+          alert('Greska!');
+        }
+      });
+  }
+
+  back() {
+    window.history.back();
   }
 
 }

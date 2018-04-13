@@ -29,7 +29,6 @@
     </ngb-tabset>
   </div>
 
-
   <!--<div class="nav nav-tabs">-->
   <!--<li class="active"> <a href="/fanpage#newProps">Zvanična prodavnica</a></li>-->
   <!--<li ><a href="/fanpage#usedProps" data-toggle="tab">Oglasi</a></li>-->
@@ -43,5 +42,6 @@
 
 
   <div *ngFor="let usedProp of usedProps | async">
-    {{ usedProp.title }}}
+    {{ usedProp.opis }}}
   </div>
+</div>

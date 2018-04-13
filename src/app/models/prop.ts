@@ -1,13 +1,13 @@
 export class UsedProp {
   id: number;
-  title: string;
-  description: string;
+  naslov: string;
+  opis: string;
   dateCreated: string;
   activeUntil: string;
   status: string;
   acceptedBid: boolean;
   adminFan: number;
-  registeredUser: number;
+  registrovaniKorisnik: number;
   image: string;
   createdDate: string;
 }

@@ -1,12 +1,17 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Bid, NewProp, UsedProp} from '../models/prop';
+import {error} from 'selenium-webdriver';
 
 @Injectable()
 export class PropService {
 
   result: any;
   bidd: Bid;
+
+  bids: Bid[];
+  creatorUsedProp: boolean;
+  biddingFinished: boolean;
 
   constructor(private http: HttpClient) {
   }
@@ -63,8 +68,22 @@ export class PropService {
   }
 
   createUsedProp(usedProp: UsedProp) {
-    return this.http.post('/api/KorisceniRekvizit', usedProp, {observe: 'response'});
+    return this.http.post('/api/KorisceniRekvizit/kreirajKorisceniRekvizit', usedProp, {observe: 'response'});
+  }                         //  KorisceniRekvizit/kreirajKorisceniRekvizit
+
+  getMyAds() {
+    return this.http.get('api/KorisceniRekvizit/user');
   }
+
+  deleteUsedProp(id: number) {
+    return this.http.delete('api/KorisceniRekvizit/' + id, {observe: 'response'});
+  }
+
+  acceptBid(usedPropId: number, bidId: number) {
+
+    return this.http.get('api/KorisceniRekvizit/' + usedPropId + '/accept-bid/' + bidId, {observe: 'response'});
+  }
+
 
 
   // ===================================================
