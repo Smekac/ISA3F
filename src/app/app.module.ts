@@ -18,6 +18,7 @@ import {PropService} from './fan-zone/prop.service';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import {KorisnikService} from './korisnik.service';
+import { HomePageComponent } from './home-page/home-page.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import {KorisnikService} from './korisnik.service';
     CreateAdComponent,
     BidListComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HomePageComponent
   ],
 
   imports: [
