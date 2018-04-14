@@ -16,8 +16,8 @@ export class BidListComponent implements OnInit {
   koriscenRekvizit: boolean;
   biddingFinished: boolean;
 
-  constructor(private propService: PropService, private router: Router) {}
-
+  constructor(private propService: PropService, private router: Router) {
+  }
 
 
   ngOnInit() {

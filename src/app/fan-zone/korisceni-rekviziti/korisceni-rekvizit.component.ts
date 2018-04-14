@@ -21,7 +21,7 @@ export class UsedPropListComponent implements OnInit {
   ngOnInit() {
     this.propService.getUsedProps().subscribe(
       (data: UsedProp[]) => {
-        this.usedProps = data
+        this.usedProps = data;
       },
       err => console.error(err),
       () => console.log('Uspesno ucitani polovni rekviziti')
@@ -31,7 +31,7 @@ export class UsedPropListComponent implements OnInit {
   getBids(usedPropId: number) {
     this.propService.getBids(usedPropId).subscribe(
       (data: Bid[]) => {
-        this.bids = data
+        this.bids = data;
       },
       err => console.error(err),
       () => console.log('Uspesno ucitane ponude za rekvizit' + usedPropId)

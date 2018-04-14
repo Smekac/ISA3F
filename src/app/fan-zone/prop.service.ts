@@ -56,8 +56,20 @@ export class PropService {
     return this.http.get('/api/KorisceniRekvizit/reserve/' + id, {observe: 'response'});
   }
 
+  // getBids(usedPropId: number) {
+  //   return this.http.get('/api/bids/used-prop' + usedPropId);
+  // }
+  //
+  // createBid(usedPropId: number, price: number) {
+  //   const bid = {
+  //     price: price
+  //   };
+  //   return this.http.post('/api/bids/' + usedPropId, bid).subscribe();
+  // }
+
+
   getBids(usedPropId: number) {
-    return this.http.get('/api/bids/KorisceniRekvizit/' + usedPropId);
+    return this.http.get('/api/bids/used-prop/' + usedPropId);
   }
 
   createBid(usedPropId: number, price: number) {
@@ -83,7 +95,6 @@ export class PropService {
 
     return this.http.get('api/KorisceniRekvizit/' + usedPropId + '/accept-bid/' + bidId, {observe: 'response'});
   }
-
 
 
   // ===================================================

@@ -31,10 +31,9 @@ export class CreateAdComponent implements OnInit {
           }
         },
         err => {
-          alert('Greska prilikom kreiranja oglasa, pokusajte ponovo. == ' + this.usedProp.naslov  );
+          alert('Greska prilikom kreiranja oglasa, pokusajte ponovo. == ' + this.usedProp.naslov);
         }
-
-        );
+      );
   }
 
 

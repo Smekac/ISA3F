@@ -1,19 +1,19 @@
 <!--<table class="table">-->
-  <!--<thead>-->
-  <!--<b><i>Ponude Korisnika</i></b>-->
-  <!--<tr>-->
-    <!--<th scope="col">Datum</th>-->
-    <!--<th scope="col">Korisnik</th>-->
-    <!--<th scope="col">Cena</th>-->
-  <!--</tr>-->
-  <!--</thead>-->
-  <!--<tbody>-->
-  <!--<tr *ngFor="let bid of bids">-->
-    <!--<td>{{bid.dateCreated | date}}</td>-->
-    <!--<td>{{bid.registeredUser}}</td>-->
-    <!--<th>{{bid.price}}</th>-->
-  <!--</tr>-->
-  <!--</tbody>-->
+<!--<thead>-->
+<!--<b><i>Ponude Korisnika</i></b>-->
+<!--<tr>-->
+<!--<th scope="col">Datum</th>-->
+<!--<th scope="col">Korisnik</th>-->
+<!--<th scope="col">Cena</th>-->
+<!--</tr>-->
+<!--</thead>-->
+<!--<tbody>-->
+<!--<tr *ngFor="let bid of bids">-->
+<!--<td>{{bid.dateCreated | date}}</td>-->
+<!--<td>{{bid.registeredUser}}</td>-->
+<!--<th>{{bid.price}}</th>-->
+<!--</tr>-->
+<!--</tbody>-->
 <!--</table>-->
 
 
@@ -31,9 +31,10 @@
     <tbody>
     <tr *ngFor="let bid of bids">
       <td>{{bid.dateCreated | date}}</td>
-      <td>{{bid.registeredUser}}</td>
+      <td>{{bid.registrovaniKorisnik}}</td>
       <th>{{bid.price}}</th>
-      <button class="btn btn-primary btn-sm" *ngIf="koriscenRekvizit && !biddingFinished" (click)="acceptBid(bid.id)">Prihvati ponudu
+      <button class="btn btn-primary btn-sm" *ngIf="koriscenRekvizit && !biddingFinished" (click)="acceptBid(bid.id)">
+        Prihvati ponudu
       </button>
     </tr>
     </tbody>

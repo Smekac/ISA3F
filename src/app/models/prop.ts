@@ -26,6 +26,15 @@ export class NewProp {
 export class Bid {
   id: number;
   price: number;
-  registeredUser: string;
+  registrovaniKorisnik: string;
   dateCreated: string;
+}
+
+export class Ustanova {
+  id: number;
+  name: string;
+  type: string;
+  address: string;
+  description: string;
+  rating: number;
 }

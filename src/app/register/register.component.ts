@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class RegisterComponent implements OnInit {
 
   private korisnik: Korisnik;
+
   constructor(private korisnikService: KorisnikService, private router: Router) {
     this.korisnik = new Korisnik();
   }
@@ -18,29 +19,29 @@ export class RegisterComponent implements OnInit {
   ngOnInit() {
   }
 
-  register(email: string, lozinka1: string, lozinka2:string, ime:string, prezime:string, grad:string, broj:string) {
-     if( email === '' || lozinka1 ==='' || lozinka2==='' || ime=== '' || prezime=== '' || grad==='' || broj === '') {
-       alert('Morate popuniti sva polja!');
-       return;
-     }
+  register(email: string, lozinka1: string, lozinka2: string, ime: string, prezime: string, grad: string, broj: string) {
+    if (email === '' || lozinka1 === '' || lozinka2 === '' || ime === '' || prezime === '' || grad === '' || broj === '') {
+      alert('Morate popuniti sva polja!');
+      return;
+    }
 
     if (this.provjeriLozinke(lozinka1, lozinka2) === false) {
       return;
     }
 
     this.korisnik.email = email;
-     this.korisnik.grad = grad;
-     this.korisnik.ime = ime;
-     this.korisnik.prezime = prezime;
-     this.korisnik.password = lozinka1;
-     this.korisnik.username = 'proba';
-     this.korisnik.number = broj;
-     this.korisnikService.registerNewUser(this.korisnik);
-     this.router.navigateByUrl('/');
+    this.korisnik.grad = grad;
+    this.korisnik.ime = ime;
+    this.korisnik.prezime = prezime;
+    this.korisnik.password = lozinka1;
+    this.korisnik.username = 'proba';
+    this.korisnik.number = broj;
+    this.korisnikService.registerNewUser(this.korisnik);
+    this.router.navigateByUrl('/');
   }
 
   provjeriLozinke(lozinka1: string, lozinka2: string) {
-    if(lozinka1 !== lozinka2) {
+    if (lozinka1 !== lozinka2) {
       alert('Lozinke se ne poklapaju!');
       return false;
     }

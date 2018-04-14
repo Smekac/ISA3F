@@ -18,7 +18,7 @@ export class NewPropListComponent implements OnInit {
   ngOnInit() {
     this.propService.getNewPropsAll().subscribe(    //getNewProps()
       (data: NewProp[]) => {
-        this.newProps = data
+        this.newProps = data;
       },
       err => console.error(err),
       () => console.log('Ucitaj ga ljebati  .....')

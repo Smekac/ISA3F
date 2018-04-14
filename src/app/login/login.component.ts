@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {KorisnikService} from '../korisnik.service';
 import {Korisnik} from '../models/korisnik';
 
@@ -18,7 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
 
-  login(email:string, lozinka:string) {
+  login(email: string, lozinka: string) {
     this.korisnikService.loginUser(email, lozinka);
   }
 

@@ -1,3 +1,4 @@
+///<reference path="shows/shows-cinema/shows-cinema.component.ts"/>
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
@@ -15,10 +16,16 @@ import {CreateAdComponent} from './fan-zone/create-ad/create-ad.component';
 import {BidListComponent} from './fan-zone/bid-list/bid-list.component';
 import {NewPropDetailComponent} from './fan-zone/new-prop-detail/new-prop-detail.component';
 import {PropService} from './fan-zone/prop.service';
-import { RegisterComponent } from './register/register.component';
-import { LoginComponent } from './login/login.component';
+import {RegisterComponent} from './register/register.component';
+import {LoginComponent} from './login/login.component';
 import {KorisnikService} from './korisnik.service';
-import { HomePageComponent } from './home-page/home-page.component';
+import {HomePageComponent} from './home-page/home-page.component';
+import {ProfilFanAdminaComponent} from './fan-zone/profil-fanAdmina/profil-fan-admina/profil-fan-admina.component';
+import {NewPropsConfigComponent} from './fan-zone/profil-fanAdmina/new-props-config/new-props-config.component';
+import {Heder1Component} from './heder1/heder1.component';
+import {ShowsCinemaComponent} from './shows/shows-cinema/shows-cinema.component';
+import {CinemaRepertoireComponent} from './shows/shows-cinema/cinema-repertoire/cinema-repertoire.component';
+import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movie/new-movie.component';
 
 
 @NgModule({
@@ -34,7 +41,13 @@ import { HomePageComponent } from './home-page/home-page.component';
     BidListComponent,
     RegisterComponent,
     LoginComponent,
-    HomePageComponent
+    HomePageComponent,
+    ProfilFanAdminaComponent,
+    NewPropsConfigComponent,
+    Heder1Component,
+    ShowsCinemaComponent,
+    CinemaRepertoireComponent,
+    NewMovieComponent
   ],
 
   imports: [
@@ -45,7 +58,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     FormsModule
   ],
   providers: [PropService,
-              KorisnikService],
+    KorisnikService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
