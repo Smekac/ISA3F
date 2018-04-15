@@ -5,9 +5,9 @@
     </div>
     <ul class="nav navbar-nav">
       <!--<li class="active"><a href="#">Home</a></li>-->
-      <li><a href="#" style="color: blue"> Stranica 1</a></li>
-      <li><a href="#" style="color: blue"> Stranica 2</a></li>
-      <li><a routerLink="/fan-zone" style="color: blue">Fan Zona</a></li>
+      <li><a role="button" routerLink='/shows/:type'>Bioskopi</a></li>
+      <li><a role="button" routerLink="/fan-zone">Pozorista</a></li>
+
     </ul>
 
     <ul class="nav navbar-nav navbar-collapse">
@@ -19,8 +19,8 @@
             </button>
 
             <div ngbDropdownMenu>
-              <button routerLink="/l" class="zaDropDown"> Odjava</button>
-              <!--<button routerLink="/register" class="zaDropDown"> Registracija</button>-->
+              <button routerLink="/login" class="zaDropDown"> Prijava</button>
+              <button routerLink="/register" class="zaDropDown"> Registracija</button>
               <!--<button class="zaDropDown">Another action</button>-->
             </div>
           </div>
@@ -30,5 +30,3 @@
 
   </div>
 </nav>
-
-
