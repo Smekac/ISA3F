@@ -26,6 +26,7 @@ import {Heder1Component} from './heder1/heder1.component';
 import {ShowsCinemaComponent} from './shows/shows-cinema/shows-cinema.component';
 import {CinemaRepertoireComponent} from './shows/shows-cinema/cinema-repertoire/cinema-repertoire.component';
 import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movie/new-movie.component';
+import {PocetnaComponent} from './pocetna/pocetna.component';
 
 
 @NgModule({
@@ -47,7 +48,8 @@ import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movi
     Heder1Component,
     ShowsCinemaComponent,
     CinemaRepertoireComponent,
-    NewMovieComponent
+    NewMovieComponent,
+    PocetnaComponent
   ],
 
   imports: [

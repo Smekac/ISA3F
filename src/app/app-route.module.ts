@@ -11,8 +11,10 @@ import {NewPropsConfigComponent} from './fan-zone/profil-fanAdmina/new-props-con
 import {ShowsCinemaComponent} from './shows/shows-cinema/shows-cinema.component';
 import {CinemaRepertoireComponent} from './shows/shows-cinema/cinema-repertoire/cinema-repertoire.component';
 import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movie/new-movie.component';
+import {PocetnaComponent} from './pocetna/pocetna.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: '/pocetna', pathMatch: 'full' },
   {path: 'fan-zone/usedProp/:id', component: UsedPropDetailComponent},
   {path: 'fan-zone/newProp/:id', component: NewPropDetailComponent},
   {path: 'fan-zone', component: FanZoneComponent},
@@ -22,7 +24,8 @@ const routes: Routes = [
   {path: 'shows/:type', component: ShowsCinemaComponent},
   {path: 'shows/:type/:id', component: CinemaRepertoireComponent},
   {path: 'shows/:type/:id/new-movie', component: NewMovieComponent},
-  {path: 'home-page', component: HomePageComponent}
+  {path: 'home-page', component: HomePageComponent},
+  {path: 'pocetna', component: PocetnaComponent}
 ];
 
 @NgModule({
