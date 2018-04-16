@@ -5,8 +5,8 @@
     class="list-group-item clearfix"
     *ngFor="let usedProp of usedProps">
     <div class="pull-left">
-      <h4 class="list-group-item-heading"><b>{{ usedProp.title }}</b></h4>
-      <p class="list-group-item-text">{{ usedProp.description }}</p>
+      <h4 class="list-group-item-heading"><b>{{ usedProp.naslov }}</b></h4>
+      <p class="list-group-item-text">{{ usedProp.opis }}</p>
       <br>
       <p>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</p>
     </div>
@@ -23,5 +23,35 @@
           style="height: 100px; width: 100px;">
       </span>
   </div>
+
+
+  <!--<app-bid-list [bids]="bids"></app-bid-list>-->
+
+  <div class="col-md-4 col-md-offset-4">
+    <h3 *ngIf="biddingFinished">Licitacija za ovaj oglas je zavrsena!</h3>
+    <table class="table">
+      <thead>
+      <b><i>Ponude Korisnika</i></b>
+      <tr>
+        <th scope="col">Datum</th>
+        <th scope="col">Korisnik</th>
+        <th scope="col">Cena</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let bid of bids">
+        <td>{{bid.dateCreated | date}}</td>
+        <td>{{bid.registrovaniKorisnik}}</td>
+        <th>{{bid.price}}</th>
+        <button class="btn btn-primary btn-sm" (click)="acceptBid(bid.id)">
+   <!--*ngIf="creatorUsedProp && !biddingFinished"  -->       Prihvati ponudu
+        </button>
+      </tr>
+      </tbody>
+    </table>
+    <button class="btn btn-info" (click)="back()">Nazad</button>
+  </div>
+
+
 </div>
 
