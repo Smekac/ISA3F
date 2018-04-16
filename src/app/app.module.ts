@@ -27,7 +27,7 @@ import {ShowsCinemaComponent} from './shows/shows-cinema/shows-cinema.component'
 import {CinemaRepertoireComponent} from './shows/shows-cinema/cinema-repertoire/cinema-repertoire.component';
 import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movie/new-movie.component';
 import {PocetnaComponent} from './pocetna/pocetna.component';
-
+import {UsedPropsConfigComponent} from './fan-zone/profil-fanAdmina/used-props-config/used-props-config.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +49,8 @@ import {PocetnaComponent} from './pocetna/pocetna.component';
     ShowsCinemaComponent,
     CinemaRepertoireComponent,
     NewMovieComponent,
-    PocetnaComponent
+    PocetnaComponent,
+    UsedPropsConfigComponent
   ],
 
   imports: [

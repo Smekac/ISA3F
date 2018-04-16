@@ -19,7 +19,6 @@ export class BidListComponent implements OnInit {
   constructor(private propService: PropService, private router: Router) {
   }
 
-
   ngOnInit() {
     this.bids = this.propService.bids;
     this.koriscenRekvizit = this.propService.creatorUsedProp;

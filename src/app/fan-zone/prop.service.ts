@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Bid, NewProp, UsedProp} from '../models/prop';
 import {error} from 'selenium-webdriver';
+import {Korisnik} from '../models/korisnik';
 
 @Injectable()
 export class PropService {
@@ -13,7 +14,12 @@ export class PropService {
   creatorUsedProp: boolean;
   biddingFinished: boolean;
 
+  korisnik: Korisnik;
+  datum: Date;
+
+
   constructor(private http: HttpClient) {
+
   }
 
   getNewProps() {
@@ -72,11 +78,17 @@ export class PropService {
     return this.http.get('/api/bids/used-prop/' + usedPropId);
   }
 
-  createBid(usedPropId: number, price: number) {
-    const bid = {
-      price: price
-    };
-    return this.http.post('/api/bids/' + usedPropId, bid).subscribe();
+  createBid(usedPropId: number, bidLocal: Bid) {  //price: number,
+    // this.bidd = {
+    //   price: price,
+    //   registrovaniKorisnik: this.korisnik.username,
+    //   dateCreated: this.datum
+    // };
+    // this.bidd.price = price;
+    // this.bidd.dateCreated = this.datum;
+    // this.bidd.registrovaniKorisnik = this.korisnik.username;
+
+    return this.http.post('/api/bids/' + usedPropId, bidLocal).subscribe();
   }
 
   createUsedProp(usedProp: UsedProp) {
@@ -99,5 +111,38 @@ export class PropService {
 
   // ===================================================
 
+  getShows() {
+    return this.http.get('api/shows?type=all');
+  }
+
+  getUser() {
+    const username = localStorage.getItem('username');
+    return this.http.get('api/users/by-username?username=' + username);
+  }
+
+  editUser(user: Korisnik) {
+    return this.http.put('api/users', user, {observe: 'response'});
+  }
+
+  changePassword(oldPw: string, newPw: string) {
+    return this.http.get('api/users/change-password?oldPw=' + oldPw + '&newPw=' + newPw, {observe: 'response'});
+  }
+
+  accept(usedPropId: number) {
+    return this.http.get('api/used-props/accept-decline/' + usedPropId + '?type=approve');
+  }
+
+  decline(usedPropId: number) {
+    return this.http.get('api/used-props/accept-decline/' + usedPropId + '?type=decline');
+  }
+
+  delete(usedPropId: number) {
+    return this.http.delete('api/used-props/' + usedPropId);
+  }
+
+  // ===
+  getUsedPropsNotFinished() {
+    return this.http.get('/api/used-props/not-finished');
+  }
 
 }

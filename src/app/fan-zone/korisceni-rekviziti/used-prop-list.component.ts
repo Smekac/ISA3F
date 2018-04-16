@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PropService} from '../prop.service';
 import {Bid, UsedProp} from '../../models/prop';
+import {Korisnik} from '../../models/korisnik';
 
 
 @Component({
@@ -13,9 +14,17 @@ export class UsedPropListComponent implements OnInit {
   usedProps: UsedProp[];
   bids: Bid[];
   selectedProp: number;
+
   price: number;
 
+  korisnik: Korisnik;
+  bidd: Bid;
+  datum: Date;
+
   constructor(private propService: PropService) {
+    this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
+    this.datum = new Date;
+    this.bidd = new Bid();
   }
 
   ngOnInit() {
@@ -81,8 +90,15 @@ export class UsedPropListComponent implements OnInit {
     this.isCollapsed = !this.isCollapsed;
   }
 
-  createBid() {
-    this.propService.createBid(this.selectedProp, this.price);
+  createBid1() {
+    console.log('cENA JE: ' + this.price + ' A datum je: ' + this.datum + '    A korisnik je: ' + this.korisnik.username);
+
+    this.bidd.price = this.price;
+    // this.bidd.dateCreated = this.datum;
+    this.bidd.registrovaniKorisnik = this.korisnik.username;
+    console.log('cENA JE: ======================' + this.bidd.price);
+
+    this.propService.createBid(this.selectedProp, this.bidd);
     this.isCollapsed = !this.isCollapsed;
     this.getBids(this.selectedProp);
   }

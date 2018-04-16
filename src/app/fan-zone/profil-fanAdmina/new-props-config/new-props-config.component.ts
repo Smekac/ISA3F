@@ -29,6 +29,7 @@ export class NewPropsConfigComponent implements OnInit {
   }
 
   deleteNewProp(newPropId: number) {            // Posto to ima mogucnost da uradi
+    console.log('Dali daje dobarr __' + newPropId);
     this.propService.deleteNewProp(newPropId)   // fanAdministartor ..
       .subscribe(response => {
           alert('Uspesno obrisan rekvizit');

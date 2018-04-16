@@ -1,0 +1,44 @@
+<app-header></app-header>
+
+<div class="col-md-2">
+  <h4>Meni</h4>
+  <a routerLink="/adminfan/new-props-config" class="btn btn-default btn-sm">Tematski rekviziti</a><br>
+  <a routerLink="/adminfan/used-props-config" class="btn btn-info btn-sm">Oglasi</a><br>
+  <a routerLink="/adminfan/personal-edit" class="btn btn-default btn-sm">Promena licnih podataka</a><br>
+  <a routerLink="/adminfan/change-password" class="btn btn-default btn-sm">Promena lozinke</a>
+</div>
+<div class="col-md-7">
+  <h2 style="display: inline;">Oglasi </h2>
+  <hr>
+  <div
+    href="#"
+    class="list-group-item clearfix"
+    *ngFor="let usedProp of usedProps">
+    <div class="pull-left">
+      <a href="/used-prop-detail/{{usedProp.id}}"><h4 class="list-group-item-heading"><b>{{ usedProp.naslov }}</b></h4>
+      </a>
+      <p class="list-group-item-text">{{ usedProp.opis }}</p>
+      <br><br>
+      <i>
+        <small>Postavio: <b>{{usedProp.registrovaniKorisnik }}</b></small>
+      </i>
+      <p>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</p>
+    </div>
+    <span class="pull-right">
+      <div *ngIf="usedProp.status == 'NACEKANJU'">
+         <button type="button" class="btn btn-success" (click)="accept(usedProp.id)">Odobri</button>
+         <button class="btn btn-warning" (click)="decline(usedProp.id)">Odbij</button>
+      </div>
+      <div>
+        <button class="btn btn-danger" (click)="delete(usedProp.id)">Obrisi</button>
+      </div>
+    </span>
+    <span class="pull-right">
+        <img
+          [src]="usedProp.image"
+          alt="{{ usedProp.name }}"
+          class="img-responsive"
+          style="height: 100px; width: 100px;">
+      </span>
+  </div>
+</div>

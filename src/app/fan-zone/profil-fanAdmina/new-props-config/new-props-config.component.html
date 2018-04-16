@@ -1,6 +1,8 @@
+<app-header></app-header>
+
 <div class="col-md-2">
   <h4>Meni</h4>
-  <a routerLink="/adminfan/new-props-config" class="btn btn-info btn-sm">Tematski rekviziti</a><br>
+  <a routerLink="/adminfan/noviRekvizit-config" class="btn btn-info btn-sm">Tematski rekviziti</a><br>
   <a routerLink="/adminfan/used-props-config" class="btn btn-default btn-sm">Oglasi</a><br>
   <a routerLink="/adminfan/personal-edit" class="btn btn-default btn-sm">Promena licnih podataka</a><br>
   <a routerLink="/adminfan/change-password" class="btn btn-default btn-sm">Promena lozinke</a>
@@ -14,7 +16,7 @@
     *ngFor="let newProp of newProps">
     <div class="pull-left">
       <a href="/new-prop-detail/{{newProp.id}}"><h4 class="list-group-item-heading"><b>{{ newProp.naslov }}</b></h4></a>
-      <p class="list-group-item-text">{{ newProp.description }}</p>
+      <p class="list-group-item-text">{{ newProp.opis }}</p>
       <b>
         <small *ngIf="newProp.user">Rezervisano od strane: {{newProp.user}}</small>
       </b>
@@ -24,7 +26,7 @@
       </i>
     </div>
     <span class="pull-right">
-        <a class="btn btn-primary" routerLink="../edit-new-prop/{{newProp.id}}">Izmeni</a>
+        <a class="btn btn-primary" routerLink="../edit-new-prop/{{newProp.id}}">Izmeni !!!!!</a>
         <button class="btn btn-danger" (click)="deleteNewProp(newProp.id)">Obrisi</button>
       </span>
     <span class="pull-right">

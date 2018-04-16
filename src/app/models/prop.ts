@@ -27,7 +27,7 @@ export class Bid {
   id: number;
   price: number;
   registrovaniKorisnik: string;
-  dateCreated: string;
+  dateCreated: Date;
 }
 
 export class Ustanova {

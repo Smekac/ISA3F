@@ -7,13 +7,13 @@ import {Korisnik} from '../models/korisnik';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent{
+export class HeaderComponent {
 
   // currentJustify = 'start';
   private korisnik: Korisnik;
 
 
-  constructor( private korisnikService: KorisnikService) {
+  constructor(private korisnikService: KorisnikService) {
     this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
 
   }
