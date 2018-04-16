@@ -9,7 +9,10 @@
       <p class="list-group-item-text">{{ newProp.opis }}</p>
       <br>
       <p>{{newProp.show}}</p>
-    </div>
+      <br>
+      <p style="color: #201fff" >Korisnicko ime: {{newProp.registrovaniKorisnik}}</p>
+      <!--<p>Ime korisnika: {{ newProp.registrovaniKorisnik }} </p>-->
+    <!--</div>-->
     <span class="pull-right">
         <button class="btn btn-info" (click)="reservation(newProp.id)">REZERVIŠI</button>
       </span>
@@ -23,3 +26,4 @@
   </div>
 </div>
 
+</div>

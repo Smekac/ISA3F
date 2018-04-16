@@ -1,4 +1,4 @@
-import {Korisnik} from "./korisnik";
+import {Korisnik} from './korisnik';
 
 export class UsedProp {
   id: number;
@@ -22,6 +22,7 @@ export class NewProp {
   price: number;
   adminFan: number;
   registeredUser: number;
+  registrovaniKorisnik: Korisnik;
   show: number;
   image: string;
   createdDate: string;
