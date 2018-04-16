@@ -26,6 +26,7 @@ export class CreateAdComponent implements OnInit {
   ngOnInit() {
   }
 
+
   create() {
     this.propService.createUsedProp(this.usedProp)
       .subscribe(

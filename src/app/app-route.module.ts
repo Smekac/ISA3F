@@ -14,11 +14,13 @@ import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movi
 import {PocetnaComponent} from './pocetna/pocetna.component';
 import {ProfilFanAdminaComponent} from './fan-zone/profil-fanAdmina/profil-fan-admina/profil-fan-admina.component';
 import {UsedPropsConfigComponent} from './fan-zone/profil-fanAdmina/used-props-config/used-props-config.component';
+import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/pocetna', pathMatch: 'full'},
   {path: 'fan-zone/usedProp/:id', component: UsedPropDetailComponent},
   {path: 'fan-zone/newProp/:id', component: NewPropDetailComponent},
+  {path: 'fanpage/my-ads', component: MyAdsComponent},
 
   {path: 'admin-profil', component: ProfilFanAdminaComponent},
 

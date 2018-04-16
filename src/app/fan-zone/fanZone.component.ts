@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {UsedProp} from '../models/prop';
 import {NewProp} from '../models/prop';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -16,11 +17,16 @@ export class FanZoneComponent implements OnInit {
   usedProp: UsedProp;
   id: number;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,private router: Router) {
 
   }
 
+  getMyAds() {
+    this.router.navigate(['fanpage/my-ads']);
+  }
+
   ngOnInit() {
+
 
   }
 

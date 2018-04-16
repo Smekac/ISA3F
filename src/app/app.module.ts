@@ -28,6 +28,7 @@ import {CinemaRepertoireComponent} from './shows/shows-cinema/cinema-repertoire/
 import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movie/new-movie.component';
 import {PocetnaComponent} from './pocetna/pocetna.component';
 import {UsedPropsConfigComponent} from './fan-zone/profil-fanAdmina/used-props-config/used-props-config.component';
+import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import {UsedPropsConfigComponent} from './fan-zone/profil-fanAdmina/used-props-c
     CinemaRepertoireComponent,
     NewMovieComponent,
     PocetnaComponent,
-    UsedPropsConfigComponent
+    UsedPropsConfigComponent,
+    MyAdsComponent
   ],
 
   imports: [

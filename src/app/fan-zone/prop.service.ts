@@ -95,8 +95,8 @@ export class PropService {
     return this.http.post('/api/KorisceniRekvizit/kreirajKorisceniRekvizit', usedProp, {observe: 'response'});
   }                         //  KorisceniRekvizit/kreirajKorisceniRekvizit
 
-  getMyAds() {
-    return this.http.get('api/KorisceniRekvizit/user');
+  getMyAds(username: String) {
+    return this.http.get('api/KorisceniRekvizit/user/'+ username);
   }
 
   deleteUsedProp(id: number) {
