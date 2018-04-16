@@ -9,7 +9,8 @@ export class UsedProp {
   status: string;
   acceptedBid: boolean;
   adminFan: number;
-  registrovaniKorisnik: number;
+ // registrovaniKorisnik: number;
+  registrovaniKorisnik: Korisnik;
   image: string;
   createdDate: string;
 }

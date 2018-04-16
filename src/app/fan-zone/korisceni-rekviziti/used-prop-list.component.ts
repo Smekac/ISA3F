@@ -94,7 +94,7 @@ export class UsedPropListComponent implements OnInit {
     console.log('cENA JE: ' + this.price + ' A datum je: ' + this.datum + '    A korisnik je: ' + this.korisnik.username);
 
     this.bidd.price = this.price;
-    // this.bidd.dateCreated = this.datum; // Ne saslje dobro kad ga ovde setujem
+    // this.bidd.dateCreated = this.datum;
     this.bidd.registrovaniKorisnik = this.korisnik;
     console.log('cENA JE: ======================' + this.bidd.price);
 
