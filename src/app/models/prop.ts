@@ -1,3 +1,5 @@
+import {Korisnik} from "./korisnik";
+
 export class UsedProp {
   id: number;
   naslov: string;
@@ -26,7 +28,7 @@ export class NewProp {
 export class Bid {
   id: number;
   price: number;
-  registrovaniKorisnik: string;
+  registrovaniKorisnik: Korisnik;
   dateCreated: Date;
 }
 
