@@ -18,6 +18,7 @@ export class NewPropListComponent implements OnInit {
   constructor(private propService: PropService) {
     this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
     // this.newProp.registrovaniKorisnik = this.korisnik;
+
   }
 
   ngOnInit() {
@@ -33,11 +34,11 @@ export class NewPropListComponent implements OnInit {
   reservation(id: number) {
     // this.result = this.propService.reservation(id);
     // console.log(' Da ulzi ovdeee ....' + this.result);
-  //  this.newProp.registrovaniKorisnik = this.korisnik; trebalo bi ga poslati da bi se setovvalo i kad bi bio post
+    //  this.newProp.registrovaniKorisnik = this.korisnik; trebalo bi ga poslati da bi se setovvalo i kad bi bio post
     this.propService.reservation(id)
       .subscribe(resp => {
         if (resp.status) {
-          alert('Uspesno ste rezervisali rekvizit!');
+          //  alert('Uspesno ste rezervisali rekvizit!');
           window.location.reload();
         } else {
           alert('Nije uspela rezervacija');

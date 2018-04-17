@@ -13,7 +13,7 @@ export class BidListComponent implements OnInit {
   @Input() bids: Bid[];
 
   idKoriscenogRekvizita: number;
-  koriscenRekvizit: boolean;
+  creatorUsedProp: boolean;
   biddingFinished: boolean;
 
   constructor(private propService: PropService, private router: Router) {
@@ -21,7 +21,7 @@ export class BidListComponent implements OnInit {
 
   ngOnInit() {
     this.bids = this.propService.bids;
-    this.koriscenRekvizit = this.propService.creatorUsedProp;
+    this.creatorUsedProp = this.propService.creatorUsedProp;
     // this.aRoute.params.subscribe(params => {
     //   this.idKoriscenogRekvizita = params['id'];
     // });
@@ -32,7 +32,7 @@ export class BidListComponent implements OnInit {
     this.propService.acceptBid(this.idKoriscenogRekvizita, bidId)
       .subscribe(resp => {
         if (resp.status === 204) {
-          alert('Uspesno ste izabrali pobednika licitacije');
+          alert('Uspesno ste izabrali pobednika licitacije : ' + this.idKoriscenogRekvizita);
           // this.router.navigate(['fanpage/my-ads']);
           window.location.reload();
         } else {

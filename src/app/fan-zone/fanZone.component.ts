@@ -17,7 +17,7 @@ export class FanZoneComponent implements OnInit {
   usedProp: UsedProp;
   id: number;
 
-  constructor(private http: HttpClient,private router: Router) {
+  constructor(private http: HttpClient, private router: Router) {
 
   }
 
@@ -45,7 +45,6 @@ export class FanZoneComponent implements OnInit {
   //     console.log(data.title);
   //   });
   // }
-
 
 }
 

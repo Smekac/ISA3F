@@ -55,7 +55,7 @@ export class PropService {
   //   return this.http.get('/api/nadjiKorisceniRekvizit');
   // }
   getUsedProps() {
-    return this.http.get('/api/KorisceniRekvizit/sve');
+    return this.http.get('/api/KorisceniRekvizit');  // /api/KorisceniRekvizit/sve   Ako hocemo sve i prihvacene i odbijene
   }
 
   reservation(id: number) {
@@ -96,7 +96,7 @@ export class PropService {
   }                         //  KorisceniRekvizit/kreirajKorisceniRekvizit
 
   getMyAds(username: String) {
-    return this.http.get('api/KorisceniRekvizit/user/'+ username);
+    return this.http.get('api/KorisceniRekvizit/user/' + username);
   }
 
   deleteUsedProp(id: number) {
@@ -144,5 +144,11 @@ export class PropService {
   getUsedPropsNotFinished() {
     return this.http.get('/api/KorisceniRekvizit/not-finished');
   }
+
+  nijeZavrsenoZaKorisnika(username: String) {
+    return this.http.get('/api/KorisceniRekvizit/nijeZavrsenaZaKorisnika/'+username);
+  }
+
+
 
 }

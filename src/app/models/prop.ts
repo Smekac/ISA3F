@@ -1,15 +1,16 @@
 import {Korisnik} from './korisnik';
+import DateTimeFormat = Intl.DateTimeFormat;
 
 export class UsedProp {
   id: number;
   naslov: string;
   opis: string;
   dateCreated: string;
-  activeUntil: string;
+  activeUntil: DateTimeFormat;
   status: string;
   acceptedBid: boolean;
   adminFan: number;
- // registrovaniKorisnik: number;
+  // registrovaniKorisnik: number;
   registrovaniKorisnik: Korisnik;
   image: string;
   createdDate: string;

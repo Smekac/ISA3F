@@ -1,4 +1,3 @@
-
 import {Component, Input, OnInit} from '@angular/core';
 import {PropService} from '../prop.service';
 import {Router} from '@angular/router';
@@ -12,39 +11,93 @@ import {Korisnik} from '../../models/korisnik';
 })
 export class MyAdsComponent implements OnInit {
 
-  usedProps: UsedProp[];
+  @Input() usedProps: UsedProp[];   // U njemu imam sve koji vaze i nisu izlicitiranii !!!!!(ne vezano za korisnika)
+  @Input() usedProps22: UsedProp[];
   korisnik: Korisnik;
   // bids: Bid[];       // Kad imamo <app-bid-list [bids]="bids"></app-bid-list>
-  usedPropId: number;
+
+
   biddingFinished: boolean;
   creatorUsedProp: boolean;
 
   @Input() bids: Bid[];
- // usedProp: UsedProp;
+
+
+  usedProp: UsedProp;
 
   idKoriscenogRekvizita: number;
 
+
+  @Input() korisceniRekvizitiZaPonude: UsedProp[];
+
+
   constructor(private propService: PropService, private router: Router) {
-    this.korisnik =  JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
-   // this.usedProps =new UsedProp();
+    this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
+    // this.usedProp =  JSON.parse(localStorage.getItem('napravljeniRekvizit'));
+    // this.usedProp = new UsedProp();
+
+
   }
 
   ngOnInit() {
+
     this.creatorUsedProp = this.propService.creatorUsedProp;
     this.biddingFinished = this.propService.biddingFinished;
     this.getMyAds();
+    // this.getUsedPropsNotFinished();
+    this.mojeNeZavrseneLicitacije();
+
   }
 
-  getMyAds() {
-    this.propService.getMyAds(this.korisnik.username)
-      .subscribe((response: UsedProp[]) => {
-        this.usedProps = response;
+  getUsedPropsNotFinished() {
+    this.propService.getUsedPropsNotFinished().subscribe(
+      (response: UsedProp[]) => {
+         this.korisceniRekvizitiZaPonude = response;
+      }, (data: UsedProp[]) => {
+        this.korisceniRekvizitiZaPonude  = data;
       });
   }
 
 
+  getMyAds() {    // getMyAds
+  this.propService.getMyAds(this.korisnik.username)
+    .subscribe((data: UsedProp[]) => {
+      this.usedProps = data;
+      // }
+      // ,(response: UsedProp[]) => {
+      // this.usedProps = response;
+
+    },);
+  // for (let prop of this.usedProps) {
+  //   console.log('kad===  ' + prop);
+  // }
+
+  this.usedProp = new UsedProp();
+
+}
+
+  mojeNeZavrseneLicitacije() {    // getMyAds
+    this.propService.nijeZavrsenoZaKorisnika(this.korisnik.username)
+      .subscribe((data: UsedProp[]) => {
+        this.usedProps22 = data;
+        // }
+        // ,(response: UsedProp[]) => {
+        // this.usedProps = response;
+
+      },);
+    // for (let prop of this.usedProps) {
+    //   console.log('kad===  ' + prop);
+    // }
+
+    this.usedProp = new UsedProp();
+
+  }
+
+
+
   acceptBid(bidId: number) {
-        console.log("____________" + this.idKoriscenogRekvizita)
+
+    console.log('____________' + this.idKoriscenogRekvizita);
     this.propService.acceptBid(this.idKoriscenogRekvizita, bidId)
       .subscribe(resp => {
         if (resp.status === 204) {
@@ -71,7 +124,11 @@ export class MyAdsComponent implements OnInit {
 
   getBids(usedPropId: number, usedPropBid: number) {
     this.idKoriscenogRekvizita = usedPropId;
-    if (usedPropBid) {
+    // this.propService.nijeZavrsenoZaKorisnika();
+    //   console.log(this.usedProp.activeUntil + "_____sta je da" );
+
+
+    if (usedPropId) {
       this.propService.biddingFinished = true;
     } else {
       this.propService.biddingFinished = false;
@@ -86,13 +143,16 @@ export class MyAdsComponent implements OnInit {
         } else {
           this.propService.bids = data;
           this.propService.creatorUsedProp = true;
-        //  this.router.navigate(['/fanpage/used-prop/' + usedPropId + '/bids']);
+          //  this.router.navigate(['/fanpage/used-prop/' + usedPropId + '/bids']);
         }
       },
 
-     // err => console.error(err)
+      // err => console.error(err)
     );
   }
 
+  back() {
+    window.history.back();
+  }
 
 }

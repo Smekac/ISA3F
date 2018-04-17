@@ -5,7 +5,7 @@
     <button type="button" class="btn btn-success" (click)="isCollapsed = !isCollapsed"
             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseNewAdd">Postavi Oglas
     </button>
-    <div class="btn btn-primary" (click)="getMyAds()" >Aktivni Oglasi</div>
+    <div class="btn btn-primary" (click)="getMyAds()">Vasi Oglasi</div>
     <br><br><br>
     <div id="collapsenpNewAdd" [ngbCollapse]="!isCollapsed">
       <div class="card">
@@ -22,7 +22,7 @@
         </ng-template>
       </ngb-tab>
       <ngb-tab>
-        <ng-template ngbTabTitle>Mali Oglasi</ng-template>
+        <ng-template ngbTabTitle>Mali Oglasi (samo odobreni i aktivni)</ng-template>
         <ng-template ngbTabContent>
           <app-used-prop-list></app-used-prop-list>
         </ng-template>

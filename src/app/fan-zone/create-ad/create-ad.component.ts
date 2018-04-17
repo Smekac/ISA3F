@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {NgbDateStruct} from '@ng-bootstrap/ng-bootstrap';
 import {UsedProp} from '../../models/prop';
 import {PropService} from '../prop.service';
-import {Korisnik} from "../../models/korisnik";
+import {Korisnik} from '../../models/korisnik';
 
 const now = new Date();
 
@@ -21,6 +21,8 @@ export class CreateAdComponent implements OnInit {
 
     this.usedProp = new UsedProp();
     this.usedProp.registrovaniKorisnik = this.korisnik;
+
+
   }
 
   ngOnInit() {
@@ -28,6 +30,10 @@ export class CreateAdComponent implements OnInit {
 
 
   create() {
+    console.log('__________' + this.usedProp.activeUntil + ' ______   _______' + this.usedProp.naslov);
+
+    // localStorage.setItem('napravljeniRekvizit', JSON.stringify(this.usedProp));
+
     this.propService.createUsedProp(this.usedProp)
       .subscribe(
         resp => {

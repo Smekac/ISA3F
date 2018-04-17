@@ -6,24 +6,24 @@
     *ngFor="let newProp of newProps">
     <div class="pull-left">
       <a href="new-prop-detail/{{newProp.id}}"><h3 class="list-group-item-heading"><b>{{ newProp.naslov }}</b></h3></a>
-      <p class="list-group-item-text">{{ newProp.opis }}</p>
-      <br>
-      <p>{{newProp.show}}</p>
-      <br>
-      <p style="color: #201fff" >Korisnicko ime: {{newProp.registrovaniKorisnik}}</p>
+      <p class="list-group-item-text">{{ newProp.opis }}
+        <!--<br>-->
+        {{newProp.show}}
+        <span style="color: #201fff">Rezervisan od strane: {{newProp.registrovaniKorisnik}} </span></p>
       <!--<p>Ime korisnika: {{ newProp.registrovaniKorisnik }} </p>-->
-    <!--</div>-->
-    <span class="pull-right">
-        <button class="btn btn-info" (click)="reservation(newProp.id)">REZERVIŠI</button>
+      <!--</div>-->
+      <span class="pull-right">
+        <button class="btn btn-info" *ngIf="newProp.registrovaniKorisnik == null" (click)="reservation(newProp.id)">REZERVIŠI</button>
       </span>
-    <span class="pull-right">
+      <!--{{newProp}}-->
+      <span class="pull-right">
         <img
           [src]="newProp.image"
           alt="{{ newProp.show }}"
           class="img-responsive"
           style="height: 100px; width: 100px;">
       </span>
+    </div>
   </div>
-</div>
 
 </div>
