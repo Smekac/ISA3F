@@ -15,15 +15,15 @@ export class CreateNewPropComponent implements OnInit {
   selectedShowId: number;
   newPropId: number;
 
-  constructor(private propService: PropService,private  router: Router) {
+  constructor(private propService: PropService,private  router: Router,private aRoute: ActivatedRoute) {
     this.newProp = new NewProp();
   }
 
   ngOnInit() {
    this.getShows();
-    // this.aRoute.params.subscribe(params => {
-    //   this.newPropId = params['id'];
-    // });
+    this.aRoute.params.subscribe(params => {
+      this.newPropId = params['id'];
+    });
     if (this.newPropId) {
       this.getNewProp();
     }
@@ -43,6 +43,7 @@ export class CreateNewPropComponent implements OnInit {
       .subscribe(response => {
         if (response.status === 201) {
           alert('Uspesno kreiran rekvizit!');
+          window.history.back();
         } else {
           alert('Doslo je do greske');
         }
@@ -61,10 +62,11 @@ export class CreateNewPropComponent implements OnInit {
   }
 
   editProp() {
+ //   console.log("______________ broj je:   " +  broj )
     this.propService.editNewProp(this.newProp, this.selectedShowId)
       .subscribe(response => {
           alert('Uspesno izmenjen rekvizit!');
-          this.router.navigate(['adminfan/new-props-config']);
+       //   this.router.navigate(['adminfan/new-props-config']);
         },
         err => {
           alert('Doslo je do greske');

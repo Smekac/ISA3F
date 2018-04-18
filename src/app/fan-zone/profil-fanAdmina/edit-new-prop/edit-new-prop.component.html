@@ -18,12 +18,12 @@
       <label>Slika</label>
       <input [(ngModel)]="newProp.image" type="text" class="form-control" name="image"
              placeholder="Unesite adresu slike (opciono)">
-      <label>Datum i vreme</label>
+      <label>Cena</label>
       <input [(ngModel)]="newProp.price" type="text" class="form-control" name="price" value="20180129023240"
              placeholder="Unesite cenu rekvizita">
     </div>
     <div class="form-check">
-      <button class="btn btn-warning" (click)="createProp()">Dodaj Rekvizit</button>
+      <button class="btn btn-warning" (click)="editProp()">Izmeni Rekvizit .. </button>
     </div>
   </form>
 </div>

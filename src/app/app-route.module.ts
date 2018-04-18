@@ -16,6 +16,7 @@ import {ProfilFanAdminaComponent} from './fan-zone/profil-fanAdmina/profil-fan-a
 import {UsedPropsConfigComponent} from './fan-zone/profil-fanAdmina/used-props-config/used-props-config.component';
 import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
 import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-prop/create-new-prop.component';
+import {EditNewPropComponent} from './fan-zone/profil-fanAdmina/edit-new-prop/edit-new-prop.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/pocetna', pathMatch: 'full'},
@@ -26,7 +27,7 @@ const routes: Routes = [
   {path: 'admin-profil', component: ProfilFanAdminaComponent},
   // {path: 'adminfan/dodajTematskiRekvizit', component: CreateNewPropComponent},
   {path: 'adminfan/adminfan/noviRekvizit', component: CreateNewPropComponent},
-  {path: 'adminfan/edit-new-prop/:id', component: CreateNewPropComponent},
+  {path: 'adminfan/edit-new-prop/:id', component: CreateNewPropComponent},  // EditNewPropComponent
   {path: 'adminfan/used-props-config', component: UsedPropsConfigComponent},
 
   // {path: 'adminfan/noviRekvizit-config', component: NewPropsConfigComponent},

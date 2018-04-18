@@ -35,14 +35,16 @@ export class PropService {
   }
 
   editNewProp(newProp: NewProp, showId: number) {
+    console.log('Uzeo' + showId);
     newProp.adminFan = null;
     newProp.show = null;
-    return this.http.put('api/noviRekvizit/' + showId, newProp);
+    console.log('Uzeo' + showId);
+    return this.http.put('api/noviRekvizit/' + showId , newProp);
   }
 
   createNewProp(newProp: NewProp, showId: number) {
     console.log('Uzeo' + showId);
-    return this.http.post('api/noviRekvizit/' + showId, newProp, {observe: 'response'});
+    return this.http.post('api/noviRekvizit/' + showId , newProp, {observe: 'response'});
   }
 
   deleteNewProp(newPropId: number) {
@@ -112,7 +114,7 @@ export class PropService {
   // ===================================================
 
   getShows() {
-    return this.http.get('api/ustanova/sve');  
+    return this.http.get('api/ustanova/sve');
   }
 
   getUser() {
