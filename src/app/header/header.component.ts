@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {KorisnikService} from '../korisnik.service';
 import {Korisnik} from '../models/korisnik';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,7 @@ export class HeaderComponent implements OnInit {
   tip: boolean;
 
 
-  constructor(private korisnikService: KorisnikService) {
+  constructor(private korisnikService: KorisnikService, private router: Router) {
     this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
   }
 
@@ -28,5 +29,9 @@ export class HeaderComponent implements OnInit {
     this.tip = this.korisnik.adminFan;
   }
 
+  logOut() {
+    this.korisnikService.logOut();
+    this.router.navigateByUrl('/');
+  }
 
 }

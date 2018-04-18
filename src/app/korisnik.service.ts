@@ -30,6 +30,9 @@ export class KorisnikService {
   }
 
   logOut() {
+
+  this.http.get( 'api/logOut').subscribe();
     localStorage.removeItem('ulogovaniKorisnik');
+
   }
 }
