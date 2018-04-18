@@ -6,4 +6,5 @@ export class Korisnik {
   email: string;
   grad: string;
   number: string;
+  adminFan: boolean;
 }
