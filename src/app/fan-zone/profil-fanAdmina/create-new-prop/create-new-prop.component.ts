@@ -20,7 +20,7 @@ export class CreateNewPropComponent implements OnInit {
   }
 
   ngOnInit() {
-   // this.getShows();
+   this.getShows();
     // this.aRoute.params.subscribe(params => {
     //   this.newPropId = params['id'];
     // });

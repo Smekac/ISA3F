@@ -24,8 +24,8 @@ const routes: Routes = [
   {path: 'fanpage/my-ads', component: MyAdsComponent},
 
   {path: 'admin-profil', component: ProfilFanAdminaComponent},
-  {path: 'dodajTematskiRekvizit', component: CreateNewPropComponent},
-  {path: 'adminfan/new-prop', component: CreateNewPropComponent},
+  // {path: 'adminfan/dodajTematskiRekvizit', component: CreateNewPropComponent},
+  {path: 'adminfan/adminfan/noviRekvizit', component: CreateNewPropComponent},
   {path: 'adminfan/edit-new-prop/:id', component: CreateNewPropComponent},
   {path: 'adminfan/used-props-config', component: UsedPropsConfigComponent},
 
