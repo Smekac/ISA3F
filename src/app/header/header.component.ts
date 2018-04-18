@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {KorisnikService} from '../korisnik.service';
 import {Korisnik} from '../models/korisnik';
 
@@ -7,15 +7,26 @@ import {Korisnik} from '../models/korisnik';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit {
 
   // currentJustify = 'start';
-  private korisnik: Korisnik;
+  korisnik: Korisnik;
+  tip: boolean;
 
 
   constructor(private korisnikService: KorisnikService) {
     this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
-
   }
+
+  ngOnInit() {
+
+    if(this.korisnik.username === 'adminfan') {
+      this.korisnik.adminFan = true;
+    } else {
+      this.korisnik.adminFan = false;
+    }
+    this.tip = this.korisnik.adminFan;
+  }
+
 
 }

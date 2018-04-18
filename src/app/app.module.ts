@@ -29,6 +29,7 @@ import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movi
 import {PocetnaComponent} from './pocetna/pocetna.component';
 import {UsedPropsConfigComponent} from './fan-zone/profil-fanAdmina/used-props-config/used-props-config.component';
 import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
+import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-prop/create-new-prop.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
     NewMovieComponent,
     PocetnaComponent,
     UsedPropsConfigComponent,
-    MyAdsComponent
+    MyAdsComponent,
+    CreateNewPropComponent
   ],
 
   imports: [

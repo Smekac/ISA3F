@@ -36,6 +36,8 @@ export class RegisterComponent implements OnInit {
     this.korisnik.password = lozinka1;
     this.korisnik.username = 'proba';
     this.korisnik.number = broj;
+    this.korisnik.adminFan = false;
+
     this.korisnikService.registerNewUser(this.korisnik);
     this.router.navigateByUrl('/');
   }

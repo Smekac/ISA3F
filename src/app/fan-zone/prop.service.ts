@@ -129,11 +129,11 @@ export class PropService {
   }
 
   accept(usedPropId: number) {
-    return this.http.get('api/KorisceniRekvizit/accept-decline/' + usedPropId + '?type=approve');
+    return this.http.get('api/prihvata/' + usedPropId );  // + '?type=approve
   }
 
   decline(usedPropId: number) {
-    return this.http.get('api/KorisceniRekvizit/accept-decline/' + usedPropId + '?type=decline');
+    return this.http.get('api/odbija/' + usedPropId ); // + '?type=decline'
   }
 
   delete(usedPropId: number) {
