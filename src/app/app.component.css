@@ -10,3 +10,6 @@
   background-color: #f3f3f3;
 }
 
+.mat-horizontal-stepper-header{
+  pointer-events: none !important;
+}

@@ -43,3 +43,15 @@ export class Ustanova {
   description: string;
   rating: number;
 }
+
+export class Projekcija {
+  id: number;
+  name: string;
+  genre: string;
+  director: string;
+  image_url: string;
+  average_score: number;
+  description: string;
+  trajanje: number;
+  averageScore: number;
+}

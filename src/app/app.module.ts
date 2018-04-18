@@ -2,6 +2,7 @@
 ///<reference path="rezervacija-mjesta/rezervacija-mjesta.component.ts"/>
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppComponent} from './app.component';
@@ -33,6 +34,9 @@ import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
 import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-prop/create-new-prop.component';
 import {EditNewPropComponent} from './fan-zone/profil-fanAdmina/edit-new-prop/edit-new-prop.component';
 import {RezervacijaMjestaComponent} from './rezervacija-mjesta/rezervacija-mjesta.component';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatFormFieldModule} from '@angular/material';
+import {UstanovaServiceService} from './ustanova-service.service';
 
 @NgModule({
   declarations: [
@@ -59,7 +63,7 @@ import {RezervacijaMjestaComponent} from './rezervacija-mjesta/rezervacija-mjest
     MyAdsComponent,
     CreateNewPropComponent,
     EditNewPropComponent,
-    RezervacijaMjestaComponent
+    RezervacijaMjestaComponent,
   ],
 
   imports: [
@@ -67,10 +71,13 @@ import {RezervacijaMjestaComponent} from './rezervacija-mjesta/rezervacija-mjest
     NgbModule.forRoot(),
     AppRouteModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatStepperModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule
   ],
   providers: [PropService,
-    KorisnikService],
+    KorisnikService, UstanovaServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
