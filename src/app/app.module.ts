@@ -29,6 +29,7 @@ import {NewMovieComponent} from './shows/shows-cinema/cinema-repertoire/new-movi
 import {PocetnaComponent} from './pocetna/pocetna.component';
 import {UsedPropsConfigComponent} from './fan-zone/profil-fanAdmina/used-props-config/used-props-config.component';
 import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
+import { RezervacijaMjestaComponent } from './rezervacija-mjesta/rezervacija-mjesta.component';
 import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-prop/create-new-prop.component';
 
 @NgModule({
@@ -53,6 +54,8 @@ import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-pro
     NewMovieComponent,
     PocetnaComponent,
     UsedPropsConfigComponent,
+    MyAdsComponent,
+    RezervacijaMjestaComponent,
     MyAdsComponent,
     CreateNewPropComponent
   ],

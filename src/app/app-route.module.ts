@@ -15,6 +15,7 @@ import {PocetnaComponent} from './pocetna/pocetna.component';
 import {ProfilFanAdminaComponent} from './fan-zone/profil-fanAdmina/profil-fan-admina/profil-fan-admina.component';
 import {UsedPropsConfigComponent} from './fan-zone/profil-fanAdmina/used-props-config/used-props-config.component';
 import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
+import {RezervacijaMjestaComponent} from './rezervacija-mjesta/rezervacija-mjesta.component';
 import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-prop/create-new-prop.component';
 
 const routes: Routes = [
@@ -40,8 +41,8 @@ const routes: Routes = [
   {path: 'shows/:type/:id', component: CinemaRepertoireComponent},
   {path: 'shows/:type/:id/new-movie', component: NewMovieComponent},
   {path: 'home-page', component: HomePageComponent},
-  {path: 'pocetna', component: PocetnaComponent}
-
+  {path: 'pocetna', component: PocetnaComponent},
+  {path: 'rezervacija-mjesta', component: RezervacijaMjestaComponent}
 ];
 
 @NgModule({
