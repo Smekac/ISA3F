@@ -7,4 +7,5 @@ export class Korisnik {
   grad: string;
   number: string;
   adminFan: boolean;
+  tipKorisnika: string;
 }

@@ -4,11 +4,11 @@
     style="color: red">{{korisnik.username}} </span></h3>
 
 
-  <form name="form2" #f12="ngForm" (submit)="potvrdi_promenu(trnutna.value, nova1.value, nova2.value)">
+  <form>
 
     <div class="form-group">
       <label>Unesite trenutnu lozinku </label>
-      <input type="text" class="form-control" #trenutna name="trenutna" required>
+      <input type="password" class="form-control" #trenutna name="trenutna" required>
       <!-- value="{{korisnik.password}}" -->
 
     </div>
@@ -16,18 +16,18 @@
 
     <div class="form-group">
       <label>Unesite novu lozniku</label>
-      <input type="text" class="form-control" #nova1 name="nova1" required>
+      <input type="password" class="form-control" #nova1 name="nova1" required>
     </div>
 
     <div class="form-group">
       <label>Ponovite novu lozinku</label>
-      <input type="text" class="form-control" #nova2 name="nova2" required>
+      <input type="password" class="form-control" #nova2 name="nova2" required>
 
     </div>
     <!--<div id="err3"></div>-->
 
     <div class="form-group">
-      <button [disabled]="!f12.form.valid" class="btn btn-primary"> Promeni sifru</button>
+      <button  class="btn btn-primary"  (click)="potvrdi_promenu(trenutna.value, nova1.value, nova2.value)" > Promeni sifru </button>
       <a routerLink="/adminfan/noviRekvizit-config" class="btn btn-link">Cancel</a>
     </div>
 

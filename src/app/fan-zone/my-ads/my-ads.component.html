@@ -121,7 +121,7 @@
           <td>{{bid.dateCreated | date}}</td>
           <td>{{bid.registrovaniKorisnik}}</td>
           <th>{{bid.price}}</th>          <!-- Popraviti da dugme omgici se samo za one koji su aktivni jos -->
-          <button class="btn btn-primary btn-sm" (click)="acceptBid(bid.id)">
+          <button class="btn btn-primary btn-sm" (click)="acceptBid(bid.id)"> Potvrdi !
             <!--*ngIf="creatorUsedProp && !biddingFinished"  -->       <!-- Prihvati ponudu -->
           </button>
         </tr>

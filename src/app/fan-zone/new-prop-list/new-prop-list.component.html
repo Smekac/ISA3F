@@ -17,7 +17,7 @@
           <mat-card-content>    <!--https://material.angular.io/assets/img/examples/shiba2.jpg -->
             <!-- opis -->
             <h4>{{ newProp.opis }} </h4>
-
+            <h2 style="color: darkgreen"> Cena je neverovatnih: {{newProp.cena}} din</h2>
           </mat-card-content>
           <mat-card-actions>
             <button mat-button *ngIf="newProp.registrovaniKorisnik == null" class="btn btn-success"
@@ -32,3 +32,5 @@
   </div>
 
 </div>
+
+

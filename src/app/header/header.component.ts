@@ -25,10 +25,10 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
 
-    if (this.korisnik.username === 'adminfan') {
+    if (this.korisnik.tipKorisnika === 'ADMINFAN') {
       this.korisnik.adminFan = true;
     } else {
-      this.korisnik.adminFan = false;
+      this.korisnik.adminFan = false; // MADA MOGU I PREKO ID DA PROVERIM
     }
     this.tip = this.korisnik.adminFan;
   }

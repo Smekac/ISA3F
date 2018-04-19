@@ -20,7 +20,7 @@ export class NewProp {
   naslov: string;   // tittle
   opis: string;
   dateCreated: string;
-  price: number;
+  cena: number;
   adminFan: number;
   registeredUser: number;
   registrovaniKorisnik: Korisnik;

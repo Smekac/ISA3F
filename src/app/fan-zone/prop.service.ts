@@ -151,13 +151,16 @@ export class PropService {
     return this.http.get('/api/KorisceniRekvizit/nijeZavrsenaZaKorisnika/' + username);
   }
 
-  promenaZaAdmina(korisnikk: Korisnik) {
-    return this.http.put('/api/promenaAdmina', korisnikk, {observe: 'response'});
+  promenaZaAdmina(korisnik: Korisnik) {
+    return this.http.put('/api/promenaAdmina', korisnik);
   }
 
-  promenaSifre(sifra: String, nova: String) {
-    return this.http.get('api/promenaSifre/' + sifra + '/nova/' + nova);
-  }
+  // promenaSifre(sifra: String, nova: String) {
+  //   return this.http.get('api/promenaSifre/' + sifra + '/nova/' + nova);
+  // }
 
+  promenaSifre(korisnik: Korisnik) {
+    return this.http.put('api/promenaSifre',korisnik);
+  }
 
 }
