@@ -13,16 +13,58 @@
           </div>
       </mat-step>
 
-      <mat-step [stepControl]="secondFormGroup">
-          <ng-template matStepLabel>Izaberite projekciju i termin</ng-template>
+      <mat-step >
+          <ng-template matStepLabel>Izaberite projekciju</ng-template>
+          <div class="form-group" *ngFor="let p of projekcije">
+            <label>
+              <input type="radio" name="projekcija" [(ngModel)]="izabranaProjekcija" [value]="p">  {{p.name}}
+            </label>
+          </div>
           <div>
             <button mat-button matStepperPrevious type="button">Back</button>
-            <button mat-button matStepperNext type="button">Next</button>
+            <button mat-button matStepperNext  type="button">Next</button>
           </div>
       </mat-step>
 
-      <mat-step [stepControl]="secondFormGroup">
+      <mat-step>
+        <ng-template matStepLabel>Izaberite termin</ng-template>
+        <div class="form-group" *ngFor="let d of izabranaProjekcija.datumiProjekcije">
+          <label>
+            <input type="radio" name="datum" [(ngModel)]="izabranidatum" [value]="d" > {{d.datum}} {{d.termin}}
+            Cijena: {{d.cijena}}
+          </label>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious type="button">Back</button>
+          <button mat-button matStepperNext type="button">Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step>
+        <ng-template matStepLabel>Izaberite salu</ng-template>
+        <div class="form-group" *ngFor="let s of izabranidatum.sale">
+          <label>
+            <input type="radio" name="sala" [(ngModel)]="izabranaSala" [value]="s" > {{s.naziv}}
+          </label>
+        </div>
+        <div>
+          <button mat-button matStepperPrevious type="button">Back</button>
+          <button mat-button matStepperNext  type="button">Next</button>
+        </div>
+      </mat-step>
+
+      <mat-step>
         <ng-template matStepLabel>Izaberite mjesto</ng-template>
+        <div *ngFor="let seg of izabranaSala.segmenti">
+        {{seg.tipSegmenta}}
+        <mat-grid-list cols="9" rowHeight="100px">
+          <mat-grid-tile *ngFor="let tile of seg.sjedista">
+           <input type="checkbox" [checked]="tile.rezervisano" [disabled]="tile.rezervisano" (change)="dodajSjediste($event,tile.id)" >
+             {{tile.pozicija}}{{tile.red}}
+             {{tile.id}}
+          </mat-grid-tile>
+        </mat-grid-list>
+        </div>
         <div>
           <button mat-button matStepperPrevious type="button">Back</button>
           <button mat-button matStepperNext type="button">Next</button>

@@ -43,7 +43,19 @@ export class Ustanova {
   description: string;
   rating: number;
 }
+export class DatumProjekcije {
+  id: number;
+  datum: string;
+  termin: string;
+  cijena: number;
+  sale: Sala[];
+}
 
+export class Sala {
+  id: number;
+  naziv: string;
+  segmenti:Segment[];
+}
 export class Projekcija {
   id: number;
   name: string;
@@ -54,4 +66,20 @@ export class Projekcija {
   description: string;
   trajanje: number;
   averageScore: number;
+  datumiProjekcije: DatumProjekcije[];
+}
+
+export class Segment {
+  id: number;
+  tipSegmenta: string;
+  sjedista: Sjediste[];
+  brojRedova:number;
+  brojSjedistaURedu:number;
+}
+
+export class Sjediste {
+    id:number;
+    red:number;
+    pozicija:number;
+    rezervisano:boolean;
 }
