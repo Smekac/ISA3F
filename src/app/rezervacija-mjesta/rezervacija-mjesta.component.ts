@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {MatFormField} from '@angular/material';
+
+// import {MatFormField} from '@angular/material';
 import {Projekcija, UsedProp, Ustanova} from '../models/prop';
 import {UstanovaServiceService} from '../ustanova-service.service';
 @Component({
@@ -28,7 +29,7 @@ export class RezervacijaMjestaComponent implements OnInit {
   ngOnInit() {
   }
 
-  dobaviRep(){
+  dobaviRep() {
     this.ustanovaService.getRepertoar( this.izabranaUstanova).subscribe(
       (response: Projekcija[]) => {
         this.projekcije = response;

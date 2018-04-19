@@ -4,6 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
+
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AppComponent} from './app.component';
 import {HeaderComponent} from './header/header.component';
@@ -34,9 +35,12 @@ import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
 import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-prop/create-new-prop.component';
 import {EditNewPropComponent} from './fan-zone/profil-fanAdmina/edit-new-prop/edit-new-prop.component';
 import {RezervacijaMjestaComponent} from './rezervacija-mjesta/rezervacija-mjesta.component';
+import {LicniPodaciComponent} from './fan-zone/profil-fanAdmina/licni-podaci/licni-podaci.component';
+import {PromenaLozinkeComponent} from './fan-zone/profil-fanAdmina/promena-lozinke/promena-lozinke.component';
 import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material';
 import {UstanovaServiceService} from './ustanova-service.service';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -64,6 +68,8 @@ import {UstanovaServiceService} from './ustanova-service.service';
     CreateNewPropComponent,
     EditNewPropComponent,
     RezervacijaMjestaComponent,
+    LicniPodaciComponent,
+    PromenaLozinkeComponent
   ],
 
   imports: [
@@ -72,12 +78,14 @@ import {UstanovaServiceService} from './ustanova-service.service';
     AppRouteModule,
     HttpClientModule,
     FormsModule,
+    MatCardModule,
     MatStepperModule,
-    BrowserAnimationsModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    BrowserAnimationsModule
+
   ],
   providers: [PropService,
-    KorisnikService, UstanovaServiceService],
+    KorisnikService,UstanovaServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

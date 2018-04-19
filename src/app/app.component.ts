@@ -18,7 +18,7 @@ export class AppComponent implements OnInit {
     this.mobWidth = (window.screen.width) + 'px';
     console.log(this.mobHeight);
     console.log(this.mobWidth);
-    //document.getElementById('sredina').innerHTML = '<div style="height: 80px;width: this.mobWidth/2">I hajmo cela diskoteka </div>';
+    // document.getElementById('sredina').innerHTML = '<div style="height: 80px;width: this.mobWidth/2">I hajmo cela diskoteka </div>';
 
 
   }

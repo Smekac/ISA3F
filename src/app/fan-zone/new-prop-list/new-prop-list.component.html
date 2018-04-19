@@ -1,29 +1,32 @@
 <hr>
+
+<div id="mydiv">
 <div class="col-md-9">
   <div
     href="#"
-    class="list-group-item clearfix"
+    class=" clearfix"
     *ngFor="let newProp of newProps">
     <div class="pull-left">
-      <a href="new-prop-detail/{{newProp.id}}"><h3 class="list-group-item-heading"><b>{{ newProp.naslov }}</b></h3></a>
-      <p class="list-group-item-text">{{ newProp.opis }}
-        <!--<br>-->
-        {{newProp.show}}
-        <span style="color: #201fff">Rezervisan od strane: {{newProp.registrovaniKorisnik}} </span></p>
-      <!--<p>Ime korisnika: {{ newProp.registrovaniKorisnik }} </p>-->
-      <!--</div>-->
-      <span class="pull-right">
-        <button class="btn btn-info" *ngIf="newProp.registrovaniKorisnik == null" (click)="reservation(newProp.id)">REZERVIŠI</button>
-      </span>
-      <!--{{newProp}}-->
-      <span class="pull-right">
-        <img
-          [src]="newProp.image"
-          alt="{{ newProp.show }}"
-          class="img-responsive"
-          style="height: 100px; width: 100px;">
-      </span>
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title> <h2>{{ newProp.naslov }} </h2> </mat-card-title>
+          <mat-card-subtitle>Korisnik koji je rezervisao: {{ newProp.registrovaniKorisnik }}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image style="height: 300px; width: 300px;" [src]="newProp.image"  alt="Photo of a Shiba Inu">
+        <mat-card-content>    <!--https://material.angular.io/assets/img/examples/shiba2.jpg -->
+          <!-- opis -->
+          <h4>{{ newProp.opis }} </h4>
+
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button *ngIf="newProp.registrovaniKorisnik == null" class="btn btn-success" (click)="reservation(newProp.id)"> Rezervisi </button>
+        </mat-card-actions>
+      </mat-card>
+
     </div>
   </div>
+
+</div>
 
 </div>

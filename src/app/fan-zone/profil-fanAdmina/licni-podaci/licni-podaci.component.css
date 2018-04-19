@@ -1,11 +1,11 @@
 #mydiv {
   position: absolute;
-  top: 40%;
+  top: 35%;
   left: 50%;
-  width: 50em;
+  width: 60em;
   height: 18em;
   margin-top: -9em; /*set to a negative number 1/2 of your height*/
-  margin-left: -19em; /*set to a negative number 1/2 of your width*/
+  margin-left: -25em; /*set to a negative number 1/2 of your width*/
   /*border: 1px solid #ccc;*/
   background-color: #f3f3f3;
 }

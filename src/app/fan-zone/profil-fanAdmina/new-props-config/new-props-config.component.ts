@@ -9,9 +9,11 @@ import {NewProp} from '../../../models/prop';
   styleUrls: ['./new-props-config.component.css']
 })
 export class NewPropsConfigComponent implements OnInit {
+
   newProps: NewProp[];
 
   constructor(private propService: PropService) {
+    
   }
 
   ngOnInit() {

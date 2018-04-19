@@ -18,6 +18,8 @@ import {MyAdsComponent} from './fan-zone/my-ads/my-ads.component';
 import {RezervacijaMjestaComponent} from './rezervacija-mjesta/rezervacija-mjesta.component';
 import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-prop/create-new-prop.component';
 import {EditNewPropComponent} from './fan-zone/profil-fanAdmina/edit-new-prop/edit-new-prop.component';
+import {LicniPodaciComponent} from './fan-zone/profil-fanAdmina/licni-podaci/licni-podaci.component';
+import {PromenaLozinkeComponent} from './fan-zone/profil-fanAdmina/promena-lozinke/promena-lozinke.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/pocetna', pathMatch: 'full'},
@@ -28,6 +30,9 @@ const routes: Routes = [
   {path: 'admin-profil', component: ProfilFanAdminaComponent},
   // {path: 'adminfan/dodajTematskiRekvizit', component: CreateNewPropComponent},
   {path: 'adminfan/adminfan/noviRekvizit', component: CreateNewPropComponent},
+  {path: 'adminfan/licni-podaci', component: LicniPodaciComponent},
+  {path: 'adminfan/promena-lozinke', component: PromenaLozinkeComponent},
+
   {path: 'adminfan/edit-new-prop/:id', component: CreateNewPropComponent},  // EditNewPropComponent
   {path: 'adminfan/used-props-config', component: UsedPropsConfigComponent},
 

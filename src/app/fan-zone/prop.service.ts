@@ -35,7 +35,7 @@ export class PropService {
   }
 
   editNewProp(newProp: NewProp, showId: number) {
-    console.log('Uzeo' + showId);
+    console.log('Idemooo: ' + showId);
     newProp.adminFan = null;
     newProp.show = null;
     console.log('Uzeo' + showId);
@@ -151,6 +151,13 @@ export class PropService {
     return this.http.get('/api/KorisceniRekvizit/nijeZavrsenaZaKorisnika/'+username);
   }
 
+  promenaZaAdmina(korisnikk: Korisnik) {
+    return this.http.put('/api/promenaAdmina',korisnikk,{observe: 'response'});
+  }
+
+  promenaSifre(sifra: String, nova: String) {
+    return this.http.get('api/promenaSifre/'+ sifra + '/nova/'+ nova  );
+  }
 
 
 }

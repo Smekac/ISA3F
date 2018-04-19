@@ -1,45 +1,97 @@
 <app-header></app-header>
 
-<div class="col-md-2">
-  <h4>Meni</h4>
-  <a routerLink="/adminfan/noviRekvizit-config" class="btn btn-default btn-sm">Tematski rekviziti</a><br>
-  <a routerLink="/adminfan/used-props-config" class="btn btn-info btn-sm">Oglasi</a><br>
-  <a routerLink="/adminfan/personal-edit" class="btn btn-default btn-sm">Promena licnih podataka</a><br>
-  <a routerLink="/adminfan/change-password" class="btn btn-default btn-sm">Promena lozinke</a>
+<div >
+  <table  >
+    <tr>
+      <th colspan="4" ><h2>Opcije</h2></th>
+    </tr>
+
+    <tr>
+      <td > <a routerLink="/adminfan/noviRekvizit-config" class="btn btn btn-primary" style="width: 220px;height: 50px;font-size: large;color: whitesmoke" >Tematski rekviziti</a></td>
+      <td> <a routerLink="/adminfan/used-props-config" class="btn btn btn-primary" style="width: 220px;height: 50px;font-size: large;color: whitesmoke">Oglasi</a> </td>
+      <td>
+        <a routerLink="/adminfan/licni-podaci" class="btn btn btn-primary" style="width: 290px;height: 50px;font-size: large;color: whitesmoke">Promena licnih podataka</a><br>
+      </td>
+      <td>
+        <a routerLink="adminfan/promena-lozinke" class="btn btn btn-primary" style="width: 220px;height: 50px;font-size: large;color: whitesmoke;" >Promena sifre</a>
+      </td>
+    </tr>
+  </table>
+
 </div>
-<div class="col-md-7">
-  <h2 style="display: inline;">Oglasi </h2>
+
+<div id="mydiv">
+
+
+<!--<hr>-->
+<!--<hr>-->
+<!--<hr>-->
+<!--<hr>-->
+<!--<br>-->
+<!--<br>-->
+<!--<br>-->
+
+<div  class="col-lg-24" >
+  <h2 style="display: inline;">Oglasi korisnika (polovni) </h2>
   <hr>
   <div
     href="#"
-    class="list-group-item clearfix"
+    class="clearfix"
     *ngFor="let usedProp of usedProps">
     <div class="pull-left">
-      <!--<a href="/used-prop-detail/{{usedProp.id}}"> -->
-      <h4 class="list-group-item-heading"><b>{{ usedProp.naslov }}</b></h4>
-      <!--</a>-->
-      <p class="list-group-item-text">{{ usedProp.opis }}</p>
-      <br><br>
-      <i>
-        <small>Postavio: <b>{{usedProp.registrovaniKorisnik }}</b></small>
-      </i>
-      <p>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</p>
-    </div>
-    <span class="pull-right">
-      <div *ngIf="usedProp.status == 'NACEKANJU'">
-         <button type="button" class="btn btn-success" (click)="accept(usedProp.id)">Odobri</button>
-         <button class="btn btn-warning" (click)="decline(usedProp.id)">Odbij</button>
+
+
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title> <h2>{{ usedProp.naslov }} </h2> </mat-card-title>
+            <mat-card-subtitle> {{ usedProp.registrovaniKorisnik }}</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image style="height: 300px; width: 300px;" [src]="usedProp.image"  alt="Photo of a Shiba Inu">
+          <mat-card-content>    <!--https://material.angular.io/assets/img/examples/shiba2.jpg -->
+            <!-- opis -->
+            <h4>{{ usedProp.opis }} </h4>
+            <h2>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</h2>
+          </mat-card-content>
+          <mat-card-actions>
+            <!--<button mat-button class="btn btn-success"> <a routerLink="../edit-new-prop/{{newProp.id}}" style="color: white" >Izmeni !!!!!</a></button>-->
+            <!--<button mat-button class="btn btn-danger" (click)="deleteNewProp(newProp.id)" > Obrisi </button>-->
+            <div *ngIf="usedProp.status == 'NACEKANJU'">-->
+              <button mat-button type="button" class="btn btn-success" (click)="accept(usedProp.id)">Odobri</button>
+              <button mat-button class="btn btn-danger" (click)="decline(usedProp.id)">Odbij</button>
+              </div>
+          </mat-card-actions>
+        </mat-card>
+
       </div>
-      <div>
-        <!--<button class="btn btn-danger" (click)="delete(usedProp.id)">Obrisi</button>-->
-      </div>
-    </span>
-    <span class="pull-right">
-        <img
-          [src]="usedProp.image"
-          alt="{{ usedProp.name }}"
-          class="img-responsive"
-          style="height: 100px; width: 100px;">
-      </span>
-  </div>
+      <!--&lt;!&ndash;<a href="/used-prop-detail/{{usedProp.id}}"> &ndash;&gt;-->
+      <!--<h4 class="list-group-item-heading"><b>{{ usedProp.naslov }}</b></h4>-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+      <!--<p class="list-group-item-text">{{ usedProp.opis }}</p>-->
+      <!--<br><br>-->
+      <!--<i>-->
+        <!--<small>Postavio: <b>{{usedProp.registrovaniKorisnik }}</b></small>-->
+      <!--</i>-->
+      <!--<p>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</p>-->
+    <!--</div>-->
+    <!--<span class="pull-right">-->
+      <!--<div *ngIf="usedProp.status == 'NACEKANJU'">-->
+         <!--<button type="button" class="btn btn-success" (click)="accept(usedProp.id)">Odobri</button>-->
+         <!--<button class="btn btn-danger" (click)="decline(usedProp.id)">Odbij</button>-->
+      <!--</div>-->
+      <!--<div>-->
+        <!--&lt;!&ndash;<button class="btn btn-danger" (click)="delete(usedProp.id)">Obrisi</button>&ndash;&gt;-->
+      <!--</div>-->
+    <!--</span>-->
+    <!--<span class="pull-right">-->
+        <!--<img-->
+          <!--[src]="usedProp.image"-->
+          <!--alt="{{ usedProp.name }}"-->
+          <!--class="img-responsive"-->
+          <!--style="height: 100px; width: 100px;">-->
+      <!--</span>-->
+</div>
+
+</div>
+
 </div>
