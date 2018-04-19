@@ -1,5 +1,5 @@
 .example-card {
-  max-width: 400px;
+  max-width: 5500px;
 }
 
 .example-header-image {
@@ -13,7 +13,7 @@
   left: 50%;
   width: 60em;
   height: 18em;
-  margin-top: 5em; /*set to a negative number 1/2 of your height*/
+  margin-top: 11%; /*set to a negative number 1/2 of your height*/
   margin-left: -25em; /*set to a negative number 1/2 of your width*/
   /*border: 1px solid #ccc;*/
   background-color: #f3f3f3;

@@ -41,6 +41,9 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatFormFieldModule} from '@angular/material';
 import {UstanovaServiceService} from './ustanova-service.service';
 import {MatCardModule} from '@angular/material/card';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatTableModule} from '@angular/material/table';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -81,11 +84,14 @@ import {MatCardModule} from '@angular/material/card';
     MatCardModule,
     MatStepperModule,
     MatFormFieldModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatGridListModule,
+    MatTableModule,
+    MatDatepickerModule
 
   ],
   providers: [PropService,
-    KorisnikService,UstanovaServiceService],
+    KorisnikService, UstanovaServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

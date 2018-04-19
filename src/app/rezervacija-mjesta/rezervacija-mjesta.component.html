@@ -1,51 +1,51 @@
 <app-header></app-header>
 
-  <form>
-    <mat-horizontal-stepper  linear>
+<form>
+  <mat-horizontal-stepper linear>
 
-      <mat-step>
-          <ng-template matStepLabel>Izaberite bioskop/pozorište</ng-template>
-        <select name="ustanovaSelect" [(ngModel)]="izabranaUstanova" >
-          <option *ngFor="let c of ustanove" [ngValue]="c.id"> {{c.name}} </option>
-          </select>
-          <div>
-            <button mat-button matStepperNext (click)="dobaviRep()"  type="button">Dalje</button>
-          </div>
-      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Izaberite bioskop/pozorište</ng-template>
+      <select name="ustanovaSelect" [(ngModel)]="izabranaUstanova">
+        <option *ngFor="let c of ustanove" [ngValue]="c.id"> {{c.name}}</option>
+      </select>
+      <div>
+        <button mat-button matStepperNext (click)="dobaviRep()" type="button">Dalje</button>
+      </div>
+    </mat-step>
 
-      <mat-step [stepControl]="secondFormGroup">
-          <ng-template matStepLabel>Izaberite projekciju i termin</ng-template>
-          <div>
-            <button mat-button matStepperPrevious type="button">Back</button>
-            <button mat-button matStepperNext type="button">Next</button>
-          </div>
-      </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Izaberite projekciju i termin</ng-template>
+      <div>
+        <button mat-button matStepperPrevious type="button">Back</button>
+        <button mat-button matStepperNext type="button">Next</button>
+      </div>
+    </mat-step>
 
-      <mat-step [stepControl]="secondFormGroup">
-        <ng-template matStepLabel>Izaberite mjesto</ng-template>
-        <div>
-          <button mat-button matStepperPrevious type="button">Back</button>
-          <button mat-button matStepperNext type="button">Next</button>
-        </div>
-      </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Izaberite mjesto</ng-template>
+      <div>
+        <button mat-button matStepperPrevious type="button">Back</button>
+        <button mat-button matStepperNext type="button">Next</button>
+      </div>
+    </mat-step>
 
-      <mat-step [stepControl]="secondFormGroup">
-        <ng-template matStepLabel>Pozovite prijatelje</ng-template>
-        <div>
-          <button mat-button matStepperPrevious type="button">Back</button>
-          <button mat-button matStepperNext type="button">Next</button>
-        </div>
-      </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Pozovite prijatelje</ng-template>
+      <div>
+        <button mat-button matStepperPrevious type="button">Back</button>
+        <button mat-button matStepperNext type="button">Next</button>
+      </div>
+    </mat-step>
 
-      <mat-step>
-        <ng-template matStepLabel>Detalji rezervacija</ng-template>
-        You are now done.
-        <div>
-          <button mat-button matStepperPrevious>Back</button>
-          <button mat-button >Potvrdi</button>
-        </div>
-      </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Detalji rezervacija</ng-template>
+      You are now done.
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button>Potvrdi</button>
+      </div>
+    </mat-step>
 
-    </mat-horizontal-stepper>
-  </form>
+  </mat-horizontal-stepper>
+</form>
 

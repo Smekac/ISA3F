@@ -39,12 +39,12 @@ export class PropService {
     newProp.adminFan = null;
     newProp.show = null;
     console.log('Uzeo' + showId);
-    return this.http.put('api/noviRekvizit/' + showId , newProp);
+    return this.http.put('api/noviRekvizit/' + showId, newProp);
   }
 
   createNewProp(newProp: NewProp, showId: number) {
     console.log('Uzeo' + showId);
-    return this.http.post('api/noviRekvizit/' + showId , newProp, {observe: 'response'});
+    return this.http.post('api/noviRekvizit/' + showId, newProp, {observe: 'response'});
   }
 
   deleteNewProp(newPropId: number) {
@@ -131,11 +131,11 @@ export class PropService {
   }
 
   accept(usedPropId: number) {
-    return this.http.get('api/prihvata/' + usedPropId );  // + '?type=approve
+    return this.http.get('api/prihvata/' + usedPropId);  // + '?type=approve
   }
 
   decline(usedPropId: number) {
-    return this.http.get('api/odbija/' + usedPropId ); // + '?type=decline'
+    return this.http.get('api/odbija/' + usedPropId); // + '?type=decline'
   }
 
   delete(usedPropId: number) {
@@ -148,15 +148,15 @@ export class PropService {
   }
 
   nijeZavrsenoZaKorisnika(username: String) {
-    return this.http.get('/api/KorisceniRekvizit/nijeZavrsenaZaKorisnika/'+username);
+    return this.http.get('/api/KorisceniRekvizit/nijeZavrsenaZaKorisnika/' + username);
   }
 
   promenaZaAdmina(korisnikk: Korisnik) {
-    return this.http.put('/api/promenaAdmina',korisnikk,{observe: 'response'});
+    return this.http.put('/api/promenaAdmina', korisnikk, {observe: 'response'});
   }
 
   promenaSifre(sifra: String, nova: String) {
-    return this.http.get('api/promenaSifre/'+ sifra + '/nova/'+ nova  );
+    return this.http.get('api/promenaSifre/' + sifra + '/nova/' + nova);
   }
 
 

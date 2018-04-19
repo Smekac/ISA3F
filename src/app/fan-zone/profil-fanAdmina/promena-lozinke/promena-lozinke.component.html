@@ -1,15 +1,15 @@
-
-
 <div id="mydiv">
 
-  <h3 align="center" style="color: darkgreen"> Promena sifre korisniku: <span style="color: red">{{korisnik.username}} </span> </h3>
+  <h3 align="center" style="color: darkgreen"> Promena sifre korisniku: <span
+    style="color: red">{{korisnik.username}} </span></h3>
 
 
-  <form  name="form2" #f12="ngForm" (submit)="potvrdi_promenu(trnutna.value, nova1.value, nova2.value)">
+  <form name="form2" #f12="ngForm" (submit)="potvrdi_promenu(trnutna.value, nova1.value, nova2.value)">
 
     <div class="form-group">
       <label>Unesite trenutnu lozinku </label>
-      <input type="text" class="form-control" #trenutna name="trenutna"  required>    <!-- value="{{korisnik.password}}" -->
+      <input type="text" class="form-control" #trenutna name="trenutna" required>
+      <!-- value="{{korisnik.password}}" -->
 
     </div>
     <!--<div id="err1"></div>-->
@@ -21,13 +21,13 @@
 
     <div class="form-group">
       <label>Ponovite novu lozinku</label>
-      <input type="text" class="form-control" #nova2 name="nova2"  required>
+      <input type="text" class="form-control" #nova2 name="nova2" required>
 
     </div>
     <!--<div id="err3"></div>-->
 
     <div class="form-group">
-      <button [disabled]="!f12.form.valid" class="btn btn-primary"> Promeni sifru </button>
+      <button [disabled]="!f12.form.valid" class="btn btn-primary"> Promeni sifru</button>
       <a routerLink="/adminfan/noviRekvizit-config" class="btn btn-link">Cancel</a>
     </div>
 
@@ -42,7 +42,7 @@
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
       <p>
-       <!-- opis -->
+        <!-- opis -->
 
       </p>
     </mat-card-content>

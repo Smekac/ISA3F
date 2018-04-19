@@ -19,9 +19,13 @@ export class HeaderComponent implements OnInit {
     this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
   }
 
+  getMyAds() {
+    this.router.navigate(['fanpage/my-ads']);
+  }
+
   ngOnInit() {
 
-    if(this.korisnik.username === 'adminfan') {
+    if (this.korisnik.username === 'adminfan') {
       this.korisnik.adminFan = true;
     } else {
       this.korisnik.adminFan = false;

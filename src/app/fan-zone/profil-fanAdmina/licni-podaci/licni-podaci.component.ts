@@ -14,11 +14,11 @@ export class LicniPodaciComponent implements OnInit {
 
   korisnik: Korisnik;
 
-  constructor(private propService: PropService,private router: Router) {
+  constructor(private propService: PropService, private router: Router) {
     this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
   }
 
-  potvrdi_admina(username: string,ime: string, prezime: string, email: string,grad: string,broj: string ) {   // Dodati parametre !!!!
+  potvrdi_admina(username: string, ime: string, prezime: string, email: string, grad: string, broj: string) {   // Dodati parametre !!!!
 
     this.korisnik.username = username;
     this.korisnik.ime = ime;
@@ -27,23 +27,22 @@ export class LicniPodaciComponent implements OnInit {
     this.korisnik.grad = grad;
     this.korisnik.number = broj;
 
-   // this.korisnik = JSON.parse(localStorage.setItem('ulogovaniKorisnik',this.korisnik));
-   localStorage.setItem('ulogovaniKorisnik', JSON.stringify(this.korisnik));
-
+    // this.korisnik = JSON.parse(localStorage.setItem('ulogovaniKorisnik',this.korisnik));
+    localStorage.setItem('ulogovaniKorisnik', JSON.stringify(this.korisnik));
 
 
     this.propService.promenaZaAdmina(this.korisnik).subscribe(
       response => {
-      if (response.status === 201) {
-        alert('Uspesno izvrsenoo (posto je status)!');
-        window.history.back();
-      } else {
-        alert('Doslo je do greske');
-      }
-      } ,
+        if (response.status === 201) {
+          alert('Uspesno izvrsenoo (posto je status)!');
+          window.history.back();
+        } else {
+          alert('Doslo je do greske');
+        }
+      },
       err => {
-      alert('Nije Uspeloo !!!');
-    });
+        alert('Nije Uspeloo !!!');
+      });
     //this.router.navigateByUrl('/');
   }
 

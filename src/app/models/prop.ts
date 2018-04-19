@@ -6,7 +6,7 @@ export class UsedProp {
   naslov: string;
   opis: string;
   dateCreated: string;
-  activeUntil: DateTimeFormat;
+  activeUntil: string;  // DateTimeFormat;
   status: string;
   acceptedBid: boolean;
   adminFan: number;

@@ -14,8 +14,8 @@ export class EditNewPropComponent implements OnInit {
   shows: Ustanova[];
   selectedShowId: number;
 
-  constructor(private propService: PropService,private router: Router) {
-  this.newProp = new NewProp();
+  constructor(private propService: PropService, private router: Router) {
+    this.newProp = new NewProp();
   }
 
   ngOnInit() {

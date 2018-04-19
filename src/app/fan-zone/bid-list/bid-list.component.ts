@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Bid} from '../../models/prop';
 import {PropService} from '../prop.service';
 import {Router} from '@angular/router';
+import {MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-bid-list',
@@ -16,8 +17,14 @@ export class BidListComponent implements OnInit {
   creatorUsedProp: boolean;
   biddingFinished: boolean;
 
+  // dataSource: Array<number> ;
+
+
   constructor(private propService: PropService, private router: Router) {
+    // this.dataSource = new Array<number>();
+
   }
+
 
   ngOnInit() {
     this.bids = this.propService.bids;
@@ -45,4 +52,26 @@ export class BidListComponent implements OnInit {
     window.history.back();
   }
 
+
+  // displayedColumns = ['position', 'Korisnik', 'Cena', 'Datum'];
+  // dataSource = new MatTableDataSource(this.bids);
+
+
+  // applyFilter(filterValue: string) {
+  //   // for(let bid of this.bids ) {
+  //   //   this.dataSource.push(bid.price);  // += bid.registrovaniKorisnik.username;
+  //   // }
+  //
+  //   filterValue = filterValue.trim(); // Remove whitespace
+  //   filterValue = filterValue.toLowerCase(); // MatTableDataSource defaults to lowercase matches
+  //   this.dataSource.filter = filterValue;
+  // }
+
+}  // Kraj ove klase !!!!
+
+export interface Element {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
 }

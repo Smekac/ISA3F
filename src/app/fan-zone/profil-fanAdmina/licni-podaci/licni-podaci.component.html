@@ -3,39 +3,46 @@
 <div id="mydiv">
 
 
-  <h3 align="center" style="color: darkgreen"> Menjamo podatke korisnika: <span style="color: red">{{korisnik.username}} </span> </h3>
+  <h3 align="center" style="color: darkgreen"> Menjamo podatke korisnika: <span
+    style="color: red">{{korisnik.username}} </span></h3>
 
 
-  <form  name="form" #f="ngForm" (submit)="potvrdi_admina(username.value, ime.value, prezime.value,email.value,grad.value,broj.value)">
+  <form name="form" #f="ngForm"
+        (submit)="potvrdi_admina(username.value, ime.value, prezime.value,email.value,grad.value,broj.value)">
 
     <div class="form-group">
-    <label>Username</label>
-    <input type="text" class="form-control" #username name="username" placeholder="{{korisnik.username}}" value="{{korisnik.username}}" >
+      <label>Username</label>
+      <input type="text" class="form-control" #username name="username" placeholder="{{korisnik.username}}"
+             value="{{korisnik.username}}">
     </div>
 
     <div class="form-group">
-    <label>Ime</label>
-    <input type="text" class="form-control" #ime name="ime" placeholder="{{korisnik.ime}}" value="{{korisnik.ime}}">
+      <label>Ime</label>
+      <input type="text" class="form-control" #ime name="ime" placeholder="{{korisnik.ime}}" value="{{korisnik.ime}}">
     </div>
 
     <div class="form-group">
-    <label>Prezime</label>
-    <input type="text" class="form-control" #prezime name="prezime" placeholder="{{korisnik.prezime}}" value="{{korisnik.prezime}}" >
+      <label>Prezime</label>
+      <input type="text" class="form-control" #prezime name="prezime" placeholder="{{korisnik.prezime}}"
+             value="{{korisnik.prezime}}">
     </div>
 
     <div class="form-group">
-    <label>email</label>
-    <input type="text" class="form-control" #email name="email" placeholder="{{korisnik.email}}" value="{{korisnik.email}}" >
+      <label>email</label>
+      <input type="text" class="form-control" #email name="email" placeholder="{{korisnik.email}}"
+             value="{{korisnik.email}}">
     </div>
 
     <div class="form-group">
-    <label>grad</label>
-    <input type="text" class="form-control" #grad name="grad" placeholder="{{korisnik.grad}}" value="{{korisnik.grad}}" >
+      <label>grad</label>
+      <input type="text" class="form-control" #grad name="grad" placeholder="{{korisnik.grad}}"
+             value="{{korisnik.grad}}">
     </div>
 
     <div class="form-group">
-    <label>Tel. broj</label>
-    <input type="text" class="form-control" #broj name="broj" placeholder="{{korisnik.number}}" value="{{korisnik.number}}" >
+      <label>Tel. broj</label>
+      <input type="text" class="form-control" #broj name="broj" placeholder="{{korisnik.number}}"
+             value="{{korisnik.number}}">
     </div>
 
     <div class="form-group">

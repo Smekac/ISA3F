@@ -1,48 +1,57 @@
 <hr>
 
+
 <div id="mydiv">
 
-<div class="col-md-9">
-  <div
-    href="#"
-    class=" clearfix"
-    *ngFor="let usedProp of usedProps">
-
-    <div class="pull-left">
-      <mat-card class="example-card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title> <h2>{{ usedProp.naslov }} </h2> </mat-card-title>
-          <mat-card-subtitle>Objavio: <b> {{ usedProp.registrovaniKorisnik }} </b> </mat-card-subtitle>
-        </mat-card-header>
-        <img mat-card-image style="height: 300px; width: 300px;" [src]="usedProp.image"  alt="Photo of a Shiba Inu">
-        <mat-card-content>    <!--https://material.angular.io/assets/img/examples/shiba2.jpg -->
-          <!-- opis -->
-          <h4>{{ usedProp.opis }} </h4>
-
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-button class="btn btn-success" (click)="getBidColl(usedProp.id)"  [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample" > Ponudi </button>
-          <button mat-button class="btn btn-primary" (click)="getBids(usedProp.id)" > Izlistaj sve ponude</button>
-
-        </mat-card-actions>
-      </mat-card>
-
+  <div class="col-md-12">
+    <!--<div class="pull-left">-->
+    <div id="collapseExample" [ngbCollapse]="!isCollapsed">
+      <div class="card">
+        <div class="card-body">
+          <label>Upisite iznos ponude</label>
+          <input type="text" class="form-control" id="bid" [(ngModel)]="price">
+          <button class="btn btn-primary" (click)="createBid1()">Potvrdi</button>
+        </div>
+      </div>
+      <br>
     </div>
-</div>
+    <app-bid-list [bids]="bids"></app-bid-list>
+    <!--</div>-->
+  </div>
 
-<div class="col-md-3">
-  <div id="collapseExample" [ngbCollapse]="!isCollapsed">
-    <div class="card">
-      <div class="card-body">
-        <label>Upisite iznos ponude</label>
-        <input type="text" class="form-control" id="bid" [(ngModel)]="price">
-        <button class="btn btn-primary" (click)="createBid1()">Potvrdi</button>
+  <hr>
+  <div class="col-md-9">
+    <div
+      href="#"
+      class=" clearfix"
+      *ngFor="let usedProp of usedProps">
+
+      <div class="pull-left">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title><h2>{{ usedProp.naslov }} </h2></mat-card-title>
+            <mat-card-subtitle>Objavio: <b> {{ usedProp.registrovaniKorisnik }} </b></mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image style="height: 500px; width: 500px;" [src]="usedProp.image" alt="Photo of a Shiba Inu">
+          <mat-card-content>    <!--https://material.angular.io/assets/img/examples/shiba2.jpg -->
+            <!-- opis -->
+            <h4>{{ usedProp.opis }} </h4>
+
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button class="btn btn-success" (click)="getBidColl(usedProp.id)"
+                    [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample"> Ponudi
+            </button>
+            <button mat-button class="btn btn-primary" (click)="getBids(usedProp.id)"> Izlistaj sve ponude</button>
+
+          </mat-card-actions>
+        </mat-card>
+
       </div>
     </div>
-    <br>
+
+
   </div>
-  <app-bid-list [bids]="bids"></app-bid-list>
-</div>
 
 </div>

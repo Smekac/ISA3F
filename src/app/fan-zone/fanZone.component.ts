@@ -25,26 +25,16 @@ export class FanZoneComponent implements OnInit {
     this.router.navigate(['fanpage/my-ads']);
   }
 
+  // tiles = [
+  //   {text: 'One', cols: 3, rows: 2, color: 'lightblue'},
+  //   {text: 'Two', cols: 1, rows: 2, color: 'lightgreen'}
+  // ];
+
   ngOnInit() {
 
 
   }
 
-  // getUsedProp(id: number) {
-  //   return this.http.get<UsedProp>('api/getPropUsed/1').subscribe(data => {
-  //     console.log(data.title);
-  //   });
-  // }
-  // getUsedProps() {
-  //   this.http.get<UsedProp[]>('/api/getPropNews').subscribe(data => this.usedProps);
-  //   console.log(this.usedProps);
-  //
-  // }
-  // getNewProp(id: number) {
-  //   return this.http.get<NewProp>('api/getPropNew/' + id).subscribe(data => {
-  //     console.log(data.title);
-  //   });
-  // }
 
 }
 

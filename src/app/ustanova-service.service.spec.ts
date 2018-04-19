@@ -1,6 +1,6 @@
-import { TestBed, inject } from '@angular/core/testing';
+import {TestBed, inject} from '@angular/core/testing';
 
-import { UstanovaServiceService } from './ustanova-service.service';
+import {UstanovaServiceService} from './ustanova-service.service';
 
 describe('UstanovaServiceService', () => {
   beforeEach(() => {

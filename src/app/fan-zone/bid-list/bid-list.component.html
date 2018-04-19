@@ -1,44 +1,76 @@
-<!--<table class="table">-->
-<!--<thead>-->
-<!--<b><i>Ponude Korisnika</i></b>-->
-<!--<tr>-->
-<!--<th scope="col">Datum</th>-->
-<!--<th scope="col">Korisnik</th>-->
-<!--<th scope="col">Cena</th>-->
-<!--</tr>-->
-<!--</thead>-->
-<!--<tbody>-->
-<!--<tr *ngFor="let bid of bids">-->
-<!--<td>{{bid.dateCreated | date}}</td>-->
-<!--<td>{{bid.registeredUser}}</td>-->
-<!--<th>{{bid.price}}</th>-->
-<!--</tr>-->
-<!--</tbody>-->
-<!--</table>-->
+<!--<div class="example-container mat-elevation-z8">-->
+<!--<div class="example-header">-->
+<!--<mat-form-field>-->
+<!--<input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">-->
+<!--</mat-form-field>-->
+<!--</div>-->
+
+<!--id: number;-->
+<!--price: number;-->
+<!--registrovaniKorisnik: Korisnik;-->
+<!--dateCreated: Date;-->
+
+<!--<div *ngFor="let bid of bids">-->
+<!--<mat-table #table [dataSource]="dataSource">-->
+
+<!--&lt;!&ndash; Position Column &ndash;&gt;-->
+<!--<ng-container matColumnDef="">-->
+<!--<mat-header-cell *matHeaderCellDef> id </mat-header-cell>-->
+<!--<mat-cell *matCellDef="let element"> {{bid.id}} </mat-cell>-->
+<!--</ng-container>-->
+
+<!--&lt;!&ndash; Name Column &ndash;&gt;-->
+<!--<ng-container matColumnDef="name">-->
+<!--<mat-header-cell *matHeaderCellDef> CENA </mat-header-cell>-->
+<!--<mat-cell *matCellDef="let element"> {{bid.price}} </mat-cell>-->
+<!--</ng-container>-->
+
+<!--&lt;!&ndash; Weight Column &ndash;&gt;-->
+<!--<ng-container matColumnDef="weight">-->
+<!--<mat-header-cell *matHeaderCellDef> Weight </mat-header-cell>-->
+<!--<mat-cell *matCellDef="let element"> {{element.registrovaniKorisnik.value}} </mat-cell>-->
+<!--</ng-container>-->
+
+<!--&lt;!&ndash; Symbol Column &ndash;&gt;-->
+<!--<ng-container matColumnDef="symbol">-->
+<!--<mat-header-cell *matHeaderCellDef> Datum </mat-header-cell>-->
+<!--<mat-cell *matCellDef="let element"> {{element.dateCreated}} ,, ,, {{    bid.dateCreated | date} </mat-cell>-->
+<!--</ng-container>-->
+
+<!--<mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>-->
+<!--<mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>-->
+<!--</mat-table>-->
+<!--</div>-->
+
+<!--</div>-->
 
 
-<div class="col-md-4 col-md-offset-4">
-  <h3 *ngIf="biddingFinished">Licitacija za ovaj oglas je zavrsena!</h3>
+<!--<mat-table [dataSource]=”bids”>-->
+
+<!--</mat-table>-->
+
+<div class="col-md-12 ">
+  <!--<h3 *ngIf="biddingFinished">Licitacija za ovaj oglas je zavrsena!</h3>-->
   <table class="table">
     <thead>
     <b><i>Ponude Korisnika</i></b>
     <tr>
-      <th scope="col">Datum</th>
       <th scope="col">Korisnik</th>
       <th scope="col">Cena</th>
+      <th scope="col">Datum</th>
     </tr>
     </thead>
     <tbody>
     <tr *ngFor="let bid of bids">
-      <td>{{bid.dateCreated | date}}</td>
       <td>{{bid.registrovaniKorisnik}}</td>
       <th>{{bid.price}}</th>
+      <td>{{bid.dateCreated | date}}</td>
       <!--<button class="btn btn-primary btn-sm" *ngIf="creatorUsedProp && !biddingFinished" (click)="acceptBid(bid.id)">-->
       <!--Prihvati ponudu-->
       <!--</button>-->
     </tr>
     </tbody>
   </table>
-  <button class="btn btn-info" (click)="back()">Nazad</button>
+  <button class="btn btn-warning" (click)="back()">Nazad</button>
 </div>
 

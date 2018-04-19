@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 
 // import {MatFormField} from '@angular/material';
@@ -12,8 +12,9 @@ import {UstanovaServiceService} from '../ustanova-service.service';
 export class RezervacijaMjestaComponent implements OnInit {
 
   ustanove: Ustanova[];
-  izabranaUstanova:number;
+  izabranaUstanova: number;
   projekcije: Projekcija[];
+
   constructor(private ustanovaService: UstanovaServiceService) {
 
     this.ustanovaService.getUstanove().subscribe(
@@ -30,7 +31,7 @@ export class RezervacijaMjestaComponent implements OnInit {
   }
 
   dobaviRep() {
-    this.ustanovaService.getRepertoar( this.izabranaUstanova).subscribe(
+    this.ustanovaService.getRepertoar(this.izabranaUstanova).subscribe(
       (response: Projekcija[]) => {
         this.projekcije = response;
       },

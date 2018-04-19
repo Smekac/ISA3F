@@ -1,11 +1,50 @@
 <app-header></app-header>
+
+
+<!--<mat-grid-list cols="4" rowHeight="1200px">-->
+<!--<mat-grid-tile-->
+<!--*ngFor="let tile of tiles"-->
+<!--[colspan]="tile.cols"-->
+<!--[rowspan]="tile.rows"-->
+<!--[style.background]="tile.color">-->
+<!--{{tile.text}}-->
+<!--{{tile.html}}-->
+<!--<div *ngIf="tile.text == 'One'">-->
+<!--&lt;!&ndash;<md-toolbar class="app-bar-bg" style="background-color: #9013fe;">&ndash;&gt;-->
+<!--<div class="col-md-9">-->
+<!--<ngb-tabset>-->
+
+<!--<ngb-tab>-->
+<!--<ng-template ngbTabTitle>Mali Oglasi (samo odobreni i aktivni)</ng-template>-->
+<!--<ng-template ngbTabContent>-->
+<!--<app-used-prop-list></app-used-prop-list>-->
+<!--</ng-template>-->
+<!--</ngb-tab>-->
+
+<!--<ngb-tab>-->
+<!--<ng-template ngbTabTitle><b>Novi Rekviziti</b></ng-template>-->
+<!--<ng-template ngbTabContent>-->
+<!--<app-new-prop-list></app-new-prop-list>-->
+<!--</ng-template>-->
+<!--</ngb-tab>-->
+
+<!--</ngb-tabset>-->
+<!--</div>-->
+
+<!--&lt;!&ndash;</md-toolbar>&ndash;&gt;-->
+
+<!--</div>-->
+<!--</mat-grid-tile>-->
+<!--</mat-grid-list>-->
+
+
 <div class="container-fluid">
   <div class="col-md-3">
 
     <button type="button" class="btn btn-success" (click)="isCollapsed = !isCollapsed"
             [attr.aria-expanded]="!isCollapsed" aria-controls="collapseNewAdd">Postavi Oglas
     </button>
-    <div class="btn btn-primary" (click)="getMyAds()">Vasi Oglasi</div>
+
     <br><br><br>
     <div id="collapsenpNewAdd" [ngbCollapse]="!isCollapsed">
       <div class="card">
@@ -13,21 +52,8 @@
       </div>
     </div>
   </div>
-  <div class="col-md-9">
-    <ngb-tabset>
-      <ngb-tab>
-        <ng-template ngbTabTitle><b>Novi Rekviziti</b></ng-template>
-        <ng-template ngbTabContent>
-          <app-new-prop-list></app-new-prop-list>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab>
-        <ng-template ngbTabTitle>Mali Oglasi (samo odobreni i aktivni)</ng-template>
-        <ng-template ngbTabContent>
-          <app-used-prop-list></app-used-prop-list>
-        </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
+  <div *ngFor="let usedProp of usedProps | async">
+    {{ usedProp.opis }}}
   </div>
 
   <!--<div class="nav nav-tabs">-->
@@ -42,7 +68,23 @@
   <!--</div>-->
 
 
-  <div *ngFor="let usedProp of usedProps | async">
-    {{ usedProp.opis }}}
+  <div class="col-md-9">
+    <ngb-tabset>
+
+      <ngb-tab>
+        <ng-template ngbTabTitle>Mali Oglasi (samo odobreni i aktivni)</ng-template>
+        <ng-template ngbTabContent>
+          <app-used-prop-list></app-used-prop-list>
+        </ng-template>
+      </ngb-tab>
+
+      <ngb-tab>
+        <ng-template ngbTabTitle><b>Novi Rekviziti</b></ng-template>
+        <ng-template ngbTabContent>
+          <app-new-prop-list></app-new-prop-list>
+        </ng-template>
+      </ngb-tab>
+
+    </ngb-tabset>
   </div>
 </div>

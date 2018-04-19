@@ -1,0 +1,7 @@
+#mydiv {
+  margin-bottom: 0%;
+  margin-top: 2%; /*set to a negative number 1/2 of your height*/
+  /*// margin-left: -25em; !*set to a negative number 1/2 of your width*!*/
+  /*!*border: 1px solid #ccc;*!*/
+  background-color: #f3f3f3;
+}

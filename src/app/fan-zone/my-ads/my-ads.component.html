@@ -1,82 +1,139 @@
-<div class="col-md-9 col-md-offset-3">
-  <h3>Lista oglasa koje je objavio trenutni korisnik</h3>
-  <div
-    href="#"
-    class="list-group-item clearfix"
-    *ngFor="let usedProp of usedProps">
-    <div class="pull-left">
-      <h4 class="list-group-item-heading"><b>{{ usedProp.naslov }}</b></h4>
-      <p class="list-group-item-text">{{ usedProp.opis }}</p>
-      <br>
-      <p>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</p>
+<div id="mydiv">
+
+
+  <div class="col-md-9 col-md-offset-3">
+    <h3 style="color: #201fff">Lista oglasa koje je objavio trenutni korisnik</h3>
+    <div
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let usedProp of usedProps">
+
+
+      <div class="pull-left">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title><h2>{{ usedProp.naslov }} </h2></mat-card-title>
+            <mat-card-subtitle>Objavio: <b> {{ usedProp.registrovaniKorisnik }} </b></mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image style="height: 300px; width: 300px;" [src]="usedProp.image" alt="Photo of a Shiba Inu">
+          <mat-card-content>    <!--https://material.angular.io/assets/img/examples/shiba2.jpg -->
+            <!-- opis -->
+            <h4>{{ usedProp.opis }} </h4>
+            <br><br>
+            <h2>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</h2>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button class="btn btn-danger" (click)="deleteUsedProp(usedProp.id)"> Obrisi oglas</button>
+          </mat-card-actions>
+        </mat-card>
+
+      </div>
+
     </div>
-    <span class="pull-right">
+
+    <!--<div class="pull-left">-->
+    <!--<h4 class="list-group-item-heading"><b>{{ usedProp.naslov }}</b></h4>-->
+    <!--<p class="list-group-item-text">{{ usedProp.opis }}</p>-->
+    <!--<br>-->
+    <!--<p>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</p>-->
+    <!--</div>-->
+    <!--<span class="pull-right">-->
+    <!--&lt;!&ndash;<button class="btn btn-default" (click)="getBids(usedProp.id, usedProp.acceptedBid)">Sve Ponude</button>&ndash;&gt;-->
+    <!--<button class="btn btn-danger" (click)="deleteUsedProp(usedProp.id)">Obrisi oglas</button>-->
+
+    <!--</span>-->
+    <!--<span class="pull-right">-->
+    <!--<img-->
+    <!--[src]="usedProp.image"-->
+    <!--alt="{{ usedProp.name }}"-->
+    <!--class="img-responsive"-->
+    <!--style="height: 100px; width: 100px;">-->
+    <!--</span>-->
+    <!--</div>-->
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h2 style="color: #201fff"> Lista aktivnih rekvizita koje je objavio trenutni korisnik</h2>
+
+    <div
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let usedProp of usedProps22">
+      <div class="pull-left">
+        <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title><h2>{{ usedProp.naslov }} </h2></mat-card-title>
+            <mat-card-subtitle>Objavio: <b> {{ usedProp.registrovaniKorisnik }} </b></mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image style="height: 300px; width: 300px;" [src]="usedProp.image" alt="Photo of a Shiba Inu">
+          <mat-card-content>    <!--https://material.angular.io/assets/img/examples/shiba2.jpg -->
+            <!-- opis -->
+            <h4>{{ usedProp.opis }} </h4>
+            <br><br>
+            <h2>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</h2>
+          </mat-card-content>
+          <mat-card-actions>
+            <!--<button mat-button class="btn btn-primary" (click)="deleteUsedProp(usedProp.id)" > Obrisi oglas </button>-->
+            <button class="btn btn-success" (click)="getBids(usedProp.id, usedProp.acceptedBid)">Sve Ponude</button>
+            <button class="btn btn-danger" (click)="deleteUsedProp(usedProp.id)">Obrisi oglas</button>
+          </mat-card-actions>
+        </mat-card>
+
+      </div>
+      <!--<div class="pull-left">-->
+      <!--<h4 class="list-group-item-heading"><b>{{ usedProp.naslov }}</b></h4>-->
+      <!--<p class="list-group-item-text">{{ usedProp.opis }}</p>-->
+      <!--<br>-->
+      <!--<p>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</p>-->
+      <!--</div>-->
+      <!--<span class="pull-right">-->
       <!--<button class="btn btn-default" (click)="getBids(usedProp.id, usedProp.acceptedBid)">Sve Ponude</button>-->
-      <button class="btn btn-danger" (click)="deleteUsedProp(usedProp.id)">Obrisi oglas</button>
+      <!--<button class="btn btn-danger" (click)="deleteUsedProp(usedProp.id)">Obrisi oglas</button>-->
 
-      </span>
-    <span class="pull-right">
-        <img
-          [src]="usedProp.image"
-          alt="{{ usedProp.name }}"
-          class="img-responsive"
-          style="height: 100px; width: 100px;">
-      </span>
-  </div>
-
-<h2> Lista aktivnih rekvizita koje je objavio trenutni korisnik</h2>
-
-  <div
-    href="#"
-    class="list-group-item clearfix"
-    *ngFor="let usedProp of usedProps22">
-    <div class="pull-left">
-      <h4 class="list-group-item-heading"><b>{{ usedProp.naslov }}</b></h4>
-      <p class="list-group-item-text">{{ usedProp.opis }}</p>
-      <br>
-      <p>Licitacija traje do {{usedProp.activeUntil | date:'d.M.yyyy u H:mm'}}</p>
+      <!--</span>-->
+      <!--<span class="pull-right">-->
+      <!--<img-->
+      <!--[src]="usedProp.image"-->
+      <!--alt="{{ usedProp.name }}"-->
+      <!--class="img-responsive"-->
+      <!--style="height: 100px; width: 100px;">-->
+      <!--</span>-->
     </div>
-    <span class="pull-right">
-      <button class="btn btn-default" (click)="getBids(usedProp.id, usedProp.acceptedBid)">Sve Ponude</button>
-      <button class="btn btn-danger" (click)="deleteUsedProp(usedProp.id)">Obrisi oglas</button>
 
-      </span>
-    <span class="pull-right">
-        <img
-          [src]="usedProp.image"
-          alt="{{ usedProp.name }}"
-          class="img-responsive"
-          style="height: 100px; width: 100px;">
-      </span>
+    <!--<app-bid-list [bids]="bids"></app-bid-list>-->
+
+    <div class="col-md- col-md-offset-4">
+      <h3 *ngIf="biddingFinished">Licitacija za ovaj oglas je zavrsena!</h3>
+      <table class="table">
+        <thead>
+        <b><i>Ponude Korisnika</i></b>
+        <tr>
+          <th scope="col">Datum</th>
+          <th scope="col">Korisnik</th>
+          <th scope="col">Cena</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let bid of bids">
+          <td>{{bid.dateCreated | date}}</td>
+          <td>{{bid.registrovaniKorisnik}}</td>
+          <th>{{bid.price}}</th>          <!-- Popraviti da dugme omgici se samo za one koji su aktivni jos -->
+          <button class="btn btn-primary btn-sm" (click)="acceptBid(bid.id)">
+            <!--*ngIf="creatorUsedProp && !biddingFinished"  -->       <!-- Prihvati ponudu -->
+          </button>
+        </tr>
+        </tbody>
+      </table>
+      <button class="btn btn-info" (click)="back()">Nazad</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+
   </div>
-
-  <!--<app-bid-list [bids]="bids"></app-bid-list>-->
-
-  <div class="col-md-4 col-md-offset-4">
-    <h3 *ngIf="biddingFinished">Licitacija za ovaj oglas je zavrsena!</h3>
-    <table class="table">
-      <thead>
-      <b><i>Ponude Korisnika</i></b>
-      <tr>
-        <th scope="col">Datum</th>
-        <th scope="col">Korisnik</th>
-        <th scope="col">Cena</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let bid of bids">
-        <td>{{bid.dateCreated | date}}</td>
-        <td>{{bid.registrovaniKorisnik}}</td>
-        <th>{{bid.price}}</th>          <!-- Popraviti da dugme omgici se samo za one koji su aktivni jos -->
-        <button class="btn btn-primary btn-sm" (click)="acceptBid(bid.id)">
-          <!--*ngIf="creatorUsedProp && !biddingFinished"  -->       Prihvati ponudu
-        </button>
-      </tr>
-      </tbody>
-    </table>
-    <button class="btn btn-info" (click)="back()">Nazad</button>
-  </div>
-
 
 </div>
-

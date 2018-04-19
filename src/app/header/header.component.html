@@ -18,7 +18,9 @@
             </button>
 
             <div ngbDropdownMenu>
-              <button (click)="logOut()" class="zaDropDown"> Odjava</button>
+              <button (click)="logOut()" class="zaDropDown" style="font-size: large"> Odjava</button>
+              <button (click)="getMyAds()" class="zaDropDown" style="font-size: large"> Oglasi (koje ste objavili)
+              </button>
             </div>
           </div>
         </div>
@@ -27,8 +29,8 @@
 
     <ul class="nav navbar-nav navbar-right">
 
-      <li><a href="/home-page" style="color: darkblue;">  <p >Ulogovao se: <b> {{korisnik.username}} </b> </p></a></li>
-      <li *ngIf="tip" ><a href="/admin-profil" style="color: deepskyblue"> <b> AdminFanProfil </b> </a></li>
+      <li><a href="/home-page" style="color: darkblue;"><p>Ulogovao se: <b> {{korisnik.username}} </b></p></a></li>
+      <li *ngIf="tip"><a href="/admin-profil" style="color: deepskyblue"> <b> AdminFanProfil </b> </a></li>
     </ul>
 
   </div>

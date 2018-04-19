@@ -13,7 +13,7 @@ export class NewPropsConfigComponent implements OnInit {
   newProps: NewProp[];
 
   constructor(private propService: PropService) {
-    
+
   }
 
   ngOnInit() {

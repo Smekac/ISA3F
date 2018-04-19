@@ -52,29 +52,29 @@ export class MyAdsComponent implements OnInit {
   getUsedPropsNotFinished() {
     this.propService.getUsedPropsNotFinished().subscribe(
       (response: UsedProp[]) => {
-         this.korisceniRekvizitiZaPonude = response;
+        this.korisceniRekvizitiZaPonude = response;
       }, (data: UsedProp[]) => {
-        this.korisceniRekvizitiZaPonude  = data;
+        this.korisceniRekvizitiZaPonude = data;
       });
   }
 
 
   getMyAds() {    // getMyAds
-  this.propService.getMyAds(this.korisnik.username)
-    .subscribe((data: UsedProp[]) => {
-      this.usedProps = data;
-      // }
-      // ,(response: UsedProp[]) => {
-      // this.usedProps = response;
+    this.propService.getMyAds(this.korisnik.username)
+      .subscribe((data: UsedProp[]) => {
+        this.usedProps = data;
+        // }
+        // ,(response: UsedProp[]) => {
+        // this.usedProps = response;
 
-    },);
-  // for (let prop of this.usedProps) {
-  //   console.log('kad===  ' + prop);
-  // }
+      },);
+    // for (let prop of this.usedProps) {
+    //   console.log('kad===  ' + prop);
+    // }
 
-  this.usedProp = new UsedProp();
+    this.usedProp = new UsedProp();
 
-}
+  }
 
   mojeNeZavrseneLicitacije() {    // getMyAds
     this.propService.nijeZavrsenoZaKorisnika(this.korisnik.username)
@@ -92,7 +92,6 @@ export class MyAdsComponent implements OnInit {
     this.usedProp = new UsedProp();
 
   }
-
 
 
   acceptBid(bidId: number) {
