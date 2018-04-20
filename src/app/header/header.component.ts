@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   // currentJustify = 'start';
   korisnik: Korisnik;
   tip: boolean;
+  sisTip: boolean;
 
 
   constructor(private korisnikService: KorisnikService, private router: Router) {
@@ -25,12 +26,20 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
 
+    if (this.korisnik.tipKorisnika === 'ADMINSISTEMA') {
+      this.sisTip = true;
+    } else {
+      this.sisTip = false;
+    }
+
     if (this.korisnik.tipKorisnika === 'ADMINFAN') {
       this.korisnik.adminFan = true;
+      this.tip = true;
     } else {
       this.korisnik.adminFan = false; // MADA MOGU I PREKO ID DA PROVERIM
+      this.tip = false;
     }
-    this.tip = this.korisnik.adminFan;
+
   }
 
   logOut() {

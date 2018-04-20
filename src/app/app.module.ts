@@ -44,6 +44,12 @@ import {MatCardModule} from '@angular/material/card';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatTableModule} from '@angular/material/table';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import {AdminSisComponent} from './admin-sis/admin-sis.component';
+import {AdminUstanoveComponent} from './admin-sis/admin-ustanove/admin-ustanove.component';
+import {CreateUstanovaComponent} from './admin-sis/create-ustanova/create-ustanova.component';
+import {AdminsisAddComponent} from './admin-sis/adminsis-add/adminsis-add.component';
+import {AdminfanAddComponent} from './admin-sis/adminfan-add/adminfan-add.component';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -72,7 +78,13 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     EditNewPropComponent,
     RezervacijaMjestaComponent,
     LicniPodaciComponent,
-    PromenaLozinkeComponent
+    PromenaLozinkeComponent,
+    AdminSisComponent,
+    AdminUstanoveComponent,
+    CreateUstanovaComponent,
+    AdminsisAddComponent,
+    AdminfanAddComponent
+
   ],
 
   imports: [
@@ -87,7 +99,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     BrowserAnimationsModule,
     MatGridListModule,
     MatTableModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatSelectModule
 
   ],
   providers: [PropService,

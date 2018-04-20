@@ -29,9 +29,9 @@ export class PromenaLozinkeComponent implements OnInit {
         alert('Ukucajte ponovo novu sifru posto niste dobro ponovili sifre');
       } else {
         this.korisnik.password = nova1;
-        alert('Uslooo '+ this.korisnik.password  + '  ___ ' + this.korisnik.username +'  username = ' + this.korisnik.username  + ' ' + this.korisnik );
+        alert('Uslooo ' + this.korisnik.password + '  ___ ' + this.korisnik.username + '  username = ' + this.korisnik.username + ' ' + this.korisnik);
         //      console.log('3 3 3 3 3 3 33 ');
-        this.propService.promenaSifre(this.korisnik).subscribe( );
+        this.propService.promenaSifre(this.korisnik).subscribe();
         window.history.back();
 
       }

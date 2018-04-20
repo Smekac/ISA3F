@@ -18,7 +18,7 @@ export class LicniPodaciComponent implements OnInit {
     this.korisnik = JSON.parse(localStorage.getItem('ulogovaniKorisnik'));
   }
 
-  potvrdi_admina(username: string, ime: string, prezime: string, email: string, grad: string, broj: string,password: string) {   // Dodati parametre !!!!
+  potvrdi_admina(username: string, ime: string, prezime: string, email: string, grad: string, broj: string) {   // Dodati parametre !!!!
 
     this.korisnik.username = username;
     this.korisnik.ime = ime;
@@ -26,13 +26,13 @@ export class LicniPodaciComponent implements OnInit {
     this.korisnik.email = email;
     this.korisnik.grad = grad;
     this.korisnik.number = broj;
-    this.korisnik.password = password;
+    // this.korisnik.password = password;
     // this.korisnik = JSON.parse(localStorage.setItem('ulogovaniKorisnik',this.korisnik));
     localStorage.setItem('ulogovaniKorisnik', JSON.stringify(this.korisnik));
 
 
     this.propService.promenaZaAdmina(this.korisnik).subscribe(
-     // response => {
+      // response => {
       //   if (response.status === 201) {
       //     alert('Uspesno izvrsenoo (posto je status)!');
       //     window.history.back();
@@ -43,7 +43,6 @@ export class LicniPodaciComponent implements OnInit {
       err => {
         alert('Nije Uspeloo !!!');
       });
-    //this.router.navigateByUrl('/');
   }
 
   ngOnInit() {

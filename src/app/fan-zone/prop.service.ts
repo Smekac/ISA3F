@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Bid, NewProp, UsedProp} from '../models/prop';
+import {Bid, NewProp, UsedProp, Ustanova} from '../models/prop';
 import {error} from 'selenium-webdriver';
 import {Korisnik} from '../models/korisnik';
 
@@ -64,32 +64,12 @@ export class PropService {
     return this.http.get('/api/noviRekvizit/reserve/' + id, {observe: 'response'});
   }
 
-  // getBids(usedPropId: number) {
-  //   return this.http.get('/api/bids/used-prop' + usedPropId);
-  // }
-  //
-  // createBid(usedPropId: number, price: number) {
-  //   const bid = {
-  //     price: price
-  //   };
-  //   return this.http.post('/api/bids/' + usedPropId, bid).subscribe();
-  // }
-
 
   getBids(usedPropId: number) {
     return this.http.get('/api/bids/used-prop/' + usedPropId);
   }
 
-  createBid(usedPropId: number, bidLocal: Bid) {  //price: number,
-    // this.bidd = {
-    //   price: price,
-    //   registrovaniKorisnik: this.korisnik.username,
-    //   dateCreated: this.datum
-    // };
-    // this.bidd.price = price;
-    // this.bidd.dateCreated = this.datum;
-    // this.bidd.registrovaniKorisnik = this.korisnik.username;
-
+  createBid(usedPropId: number, bidLocal: Bid) {
     return this.http.post('/api/bids/' + usedPropId, bidLocal).subscribe();
   }
 
@@ -160,7 +140,24 @@ export class PropService {
   // }
 
   promenaSifre(korisnik: Korisnik) {
-    return this.http.put('api/promenaSifre',korisnik);
+    return this.http.put('api/promenaSifre', korisnik);
+  }
+
+  dodajAdminaUstanove(korisnik: Korisnik) {
+    return this.http.post('api/sis/adminustanove', korisnik);
+  }
+
+  dodajAdminaSis(korisnik: Korisnik) {
+    return this.http.post('api/sis/dodavanje', korisnik);
+  }
+
+  dodajUstanovu(ustanova: Ustanova) {
+    return this.http.post('api/ustanova', ustanova);
+  }
+
+  dodajAdminFana(korisnik: Korisnik) {
+    return this.http.post('api/kreirajAdminaFan', korisnik);
+
   }
 
 }

@@ -1,0 +1,96 @@
+<app-header></app-header>
+
+
+<div>
+
+  <table>
+    <tr>
+      <th colspan="4"><h2>Opcije</h2></th>
+    </tr>
+
+    <tr>
+      <td><a routerLink="/adminsis/admin-sis" class="btn btn-primary "
+             style="height: 50px; font-size: large;color: #f3f3f3"> Registruj ustanovu (Pozoriste/Bioskop) </a></td>
+      <td><a routerLink="/adminsis/admin-ustanove" class="btn btn-primary "
+             style="height: 50px;font-size: large;color: #f3f3f3"> Dodaj administratora ustanove </a></td>
+      <td *ngIf="predefinisaniSys">
+        <a routerLink="/adminsis/adminsis-add" class="btn btn-primary"
+           style="height: 50px;;font-size: large;color: whitesmoke">Dodaj admina sistema</a><br>
+      </td>
+      <td *ngIf="predefinisaniSys">
+        <a routerLink="/adminsis/adminfan-add" class="btn btn-primary"
+           style="height: 50px;font-size: large;color: whitesmoke;">Daj admina fan zone</a>
+      </td>
+
+    </tr>
+  </table>
+
+
+</div>
+<hr>
+<br>
+<br>
+
+<div id="mydiv">
+
+
+  <h3 align="center" style="color: darkgreen"> Registruj USTANOVU: <span
+    style="color: red"> </span></h3>
+
+
+  <form name="form" #f="ngForm"
+        (submit)="kreiraj_ustanovu(username.value, ime.value, prezime.value)">
+
+    <div class="form-group">
+      <label> Tip ustanove: </label>
+
+      <mat-form-field>
+        <mat-select [(value)]="selected">
+          <mat-option>None</mat-option>
+          <mat-option value="BIOSKOP"> BIOSKOP</mat-option>
+          <mat-option value="POZORISTE"> POZORISTE</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+    </div>
+
+    <div class="form-group">
+      <label>Naziv ustanove</label>
+      <input type="text" class="form-control" #username name="username" value="..">
+    </div>
+
+    <div class="form-group">
+      <label> Adresa: </label>
+      <input type="text" class="form-control" #ime name="ime">
+    </div>
+
+    <div class="form-group">
+      <label> Opis </label>
+      <textarea class="form-control" #prezime name="prezime">
+        ...
+      </textarea>
+    </div>
+
+
+    <div class="form-group">
+
+      <ngb-rating [(rate)]="currentRate">
+        <ng-template let-fill="fill" let-index="index">
+          <span class="star" [class.filled]="fill === 100" [class.good]="index >7"
+                [class.bad]="index < 3">&#9733;</span>
+        </ng-template>
+      </ngb-rating>
+      <hr>
+      <pre>Rate: <b style="font-family: Arial;font-size: large">{{currentRate}}</b></pre>
+
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="!f.form.valid" class="btn btn-primary">Potvrdi</button>
+      <a routerLink="/adminsis/admin-sis" class="btn btn-link">Cancel</a>
+    </div>
+
+  </form>
+
+</div>

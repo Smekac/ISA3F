@@ -10,9 +10,7 @@
   <label>Slika</label>
   <input [(ngModel)]="usedProp.image" type="text" class="form-control" name="image"
          placeholder="Unesite adresu slike (opciono)">
-  <!--<label>Datum i vreme </label><br>-->
-  <!--<input [(ngModel)]="usedProp.activeUntil" type="text" class="form-control" name="datetime" value="20180129023240"-->
-  <!--placeholder="Unesite datum kraja licitacije u formatu ggggmmddssmmss">-->
+
 </div>
 
 <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next"></ngb-datepicker>
@@ -25,20 +23,10 @@
 
 <hr/>
 
-<!--<pre>Month: {{ date.month }}.{{ date.year }}</pre>-->
-<!--<pre>Model: {{ model | json }}</pre>-->
 <h2>Po srednje evropskom (+2) u odnosu na Srbiju</h2>
 <ngb-timepicker [(ngModel)]="time"></ngb-timepicker>
 <hr>
-<!--<pre>Selected time: {{time | json}}</pre>-->
-
 
 <div class="form-check">
   <button class="btn btn-warning" (click)="create()">Kreiraj oglas</button>
 </div>
-
-
-
-
-
-

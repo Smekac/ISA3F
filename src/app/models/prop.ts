@@ -39,7 +39,7 @@ export class Ustanova {
   id: number;
   name: string;
   type: string;
-  address: string;
+  addres: string;
   description: string;
   rating: number;
 }

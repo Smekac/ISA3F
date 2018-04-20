@@ -1,0 +1,84 @@
+<app-header></app-header>
+
+
+<div>
+
+  <table>
+    <tr>
+      <th colspan="4"><h2>Opcije</h2></th>
+    </tr>
+
+    <tr>
+      <td><a routerLink="/adminsis/create-ustanova" class="btn btn-primary "
+             style="height: 50px;font-size: large;color: #f3f3f3"> Registruj ustanovu (Pozoriste/Bioskop) </a></td>
+      <td><a routerLink="/adminsis/admin-ustanove" class="btn btn-primary "
+             style="height: 50px;font-size: large;color: #f3f3f3"> Dodaj administratora ustanove </a></td>
+      <td *ngIf="predefinisaniSys">
+        <a routerLink="/adminsis/adminsis-add" class="btn btn-primary"
+           style="height: 50px;font-size: large;color: whitesmoke">Dodaj admina sistema</a><br>
+      </td>
+      <td *ngIf="predefinisaniSys">
+        <a routerLink="/adminsis/adminfan-add" class="btn btn-primary"
+           style="height: 50px;font-size: large;color: whitesmoke;">Dodaje admine fan zone</a>
+      </td>
+
+    </tr>
+  </table>
+
+</div>
+<hr>
+<br>
+<br>
+
+<div id="mydiv">
+
+
+  <h3 align="center" style="color: darkgreen"> Dodavanje Admina fan zone: <span
+    style="color: red"> </span></h3>
+
+
+  <form name="form" #f="ngForm"
+        (submit)="potvrdi_admina(username.value, ime.value, prezime.value,email.value,grad.value,broj.value,password.value)">
+
+    <div class="form-group">
+      <label>Username</label>
+      <input type="text" class="form-control" #username name="username" value="..">
+    </div>
+
+    <div class="form-group">
+      <label>Ime</label>
+      <input type="text" class="form-control" #ime name="ime">
+    </div>
+
+    <div class="form-group">
+      <label>Prezime</label>
+      <input type="text" class="form-control" #prezime name="prezime">
+    </div>
+
+    <div class="form-group">
+      <label>email</label>
+      <input type="text" class="form-control" #email name="email">
+    </div>
+
+    <div class="form-group">
+      <label>grad</label>
+      <input type="text" class="form-control" #grad name="grad">
+    </div>
+
+    <div class="form-group">
+      <label>Tel. broj</label>
+      <input type="text" class="form-control" #broj name="broj">
+    </div>
+    <div class="form-group">
+      <label>Sifra</label>
+      <input type="password" class="form-control" #password name="password" value="">
+    </div>
+
+    <div class="form-group">
+      <button [disabled]="!f.form.valid" class="btn btn-primary">Potvrdi</button>
+      <a routerLink="/adminsis/admin-sis" class="btn btn-link">Cancel</a>
+    </div>
+
+  </form>
+
+</div>

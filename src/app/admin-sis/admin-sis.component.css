@@ -1,0 +1,33 @@
+.star {
+  font-size: 3.5rem;
+  color: #b0c4de;
+}
+
+.filled {
+  color: #1e90ff;
+}
+
+.good {
+  color: gold;
+}
+
+.bad {
+  color: #deb0b0;
+}
+
+.filled.bad {
+  color: #ff1e1e;
+}
+
+#mydiv {
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  width: 60em;
+  height: 18em;
+  margin-top: -9em; /*set to a negative number 1/2 of your height*/
+  margin-left: -25em; /*set to a negative number 1/2 of your width*/
+  /*border: 1px solid #ccc;*/
+  background-color: #f3f3f3;
+}
+

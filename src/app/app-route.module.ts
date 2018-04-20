@@ -20,6 +20,12 @@ import {CreateNewPropComponent} from './fan-zone/profil-fanAdmina/create-new-pro
 import {EditNewPropComponent} from './fan-zone/profil-fanAdmina/edit-new-prop/edit-new-prop.component';
 import {LicniPodaciComponent} from './fan-zone/profil-fanAdmina/licni-podaci/licni-podaci.component';
 import {PromenaLozinkeComponent} from './fan-zone/profil-fanAdmina/promena-lozinke/promena-lozinke.component';
+import {AdminSisComponent} from './admin-sis/admin-sis.component';
+import {AdminUstanoveComponent} from './admin-sis/admin-ustanove/admin-ustanove.component';
+import {CreateAdComponent} from './fan-zone/create-ad/create-ad.component';
+import {CreateUstanovaComponent} from './admin-sis/create-ustanova/create-ustanova.component';
+import {AdminsisAddComponent} from './admin-sis/adminsis-add/adminsis-add.component';
+import {AdminfanAddComponent} from './admin-sis/adminfan-add/adminfan-add.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/pocetna', pathMatch: 'full'},
@@ -32,12 +38,14 @@ const routes: Routes = [
   {path: 'adminfan/adminfan/noviRekvizit', component: CreateNewPropComponent},
   {path: 'adminfan/licni-podaci', component: LicniPodaciComponent},
   {path: 'adminfan/promena-lozinke', component: PromenaLozinkeComponent},
+  {path: 'adminsis/admin-sis', component: AdminSisComponent},
+  {path: 'adminsis/admin-ustanove', component: AdminUstanoveComponent},
+  {path: 'adminsis/create-ustanova', component: CreateUstanovaComponent},
+  {path: 'adminsis/adminsis-add', component: AdminsisAddComponent},
+  {path: 'adminsis/adminfan-add', component: AdminfanAddComponent},
 
   {path: 'adminfan/edit-new-prop/:id', component: CreateNewPropComponent},  // EditNewPropComponent
   {path: 'adminfan/used-props-config', component: UsedPropsConfigComponent},
-
-  // {path: 'adminfan/noviRekvizit-config', component: NewPropsConfigComponent},
-
   {path: 'fan-zone', component: FanZoneComponent},
   {path: 'adminfan/noviRekvizit-config', component: NewPropsConfigComponent},
   {path: 'adminfan/used-props-config', component: UsedPropsConfigComponent},
