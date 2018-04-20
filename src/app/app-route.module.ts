@@ -26,6 +26,12 @@ import {CreateAdComponent} from './fan-zone/create-ad/create-ad.component';
 import {CreateUstanovaComponent} from './admin-sis/create-ustanova/create-ustanova.component';
 import {AdminsisAddComponent} from './admin-sis/adminsis-add/adminsis-add.component';
 import {AdminfanAddComponent} from './admin-sis/adminfan-add/adminfan-add.component';
+import {ProfilRegKorisnikaComponent} from './profil-reg-korisnika/profil-reg-korisnika.component';
+import {BioskopiComponent} from './bioskopi/bioskopi.component';
+import {PozoristaComponent} from './pozorista/pozorista.component';
+import {PrijateljiComponent} from './prijatelji/prijatelji.component';
+import {PodesavanjaProfilaComponent} from './podesavanja-profila/podesavanja-profila.component';
+import {SpisakMjestaComponent} from './spisak-mjesta/spisak-mjesta.component';
 
 const routes: Routes = [
   {path: '', redirectTo: '/pocetna', pathMatch: 'full'},
@@ -56,7 +62,13 @@ const routes: Routes = [
   {path: 'shows/:type/:id/new-movie', component: NewMovieComponent},
   {path: 'home-page', component: HomePageComponent},
   {path: 'pocetna', component: PocetnaComponent},
-  {path: 'rezervacija-mjesta', component: RezervacijaMjestaComponent}
+  {path: 'rezervacija-mjesta', component: RezervacijaMjestaComponent},
+  {path: 'profil-reg-korisnika', component: ProfilRegKorisnikaComponent},
+  {path: 'bioskopi', component: BioskopiComponent},
+  {path: 'pozorista', component: PozoristaComponent},
+  {path: 'prijatelji', component: PrijateljiComponent},
+  {path: 'podesavanja-profila', component: PodesavanjaProfilaComponent},
+  {path: 'spisak-rezervisanih', component: SpisakMjestaComponent}
 ];
 
 @NgModule({

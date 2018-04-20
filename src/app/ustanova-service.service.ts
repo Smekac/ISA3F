@@ -11,6 +11,13 @@ export class UstanovaServiceService {
     return this.http.get('api/ustanova/sve');
   }
 
+  getBioskopi() {
+    return this.http.get('api/ustanova/bioskop');
+  }
+  getPozorista() {
+    return this.http.get('api/ustanova/pozoriste');
+  }
+
   getRepertoar(id: number) {
     return this.http.get('api/ustanova/' + id + '/repertoar');
   }

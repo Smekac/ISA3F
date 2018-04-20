@@ -35,4 +35,24 @@ export class KorisnikService {
     localStorage.removeItem('ulogovaniKorisnik');
 
   }
+
+  getPrijatelji() {
+   return this.http.get('/api/prijatelji');
+  }
+
+  prihvatiPrijatelji(id: number) {
+    return this.http.get('api/prijateljstvo/prihvati/'+ id);
+  }
+
+  obrisiPrijatelji(id: number) {
+    return this.http.get('api/prijateljstvo/obrisi/'+id);
+  }
+
+  promeniPodatke(korisnik:Korisnik) {
+    return this.http.put('api/updateRegPosetilac', korisnik);
+  }
+
+  posaljiZahtjev(id:number) {
+    return this.http.get('api/prijateljstvo/zahtjev'+ id);
+  }
 }

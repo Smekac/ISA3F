@@ -1,0 +1,23 @@
+<app-profil-reg-korisnika></app-profil-reg-korisnika>
+<br/><br/>
+
+<button class="btn">Dodaj prijatelja</button>
+<div #mydiv>
+  <table border="2" style="..." align="center" class="table">
+    <tr>
+      <th>Ime prijatelja</th>
+      <th>Status</th>
+      <td></td>
+    </tr>
+    <tr  *ngFor="let p of spisakPrijatelja">
+      <td>{{p.prijatelj.ime}} {{p.prijatelj.prezime}}</td>
+      <td>{{p.status}}</td>
+<div>
+  <td>
+    <button  *ngIf="p.status === 'na cekanju'" class="btn" (click)="prihvati(p.prijatelj.id)">Prihvati</button>
+    <button class="btn" (click)="obrisi(p.prijatelj.id)">Obriši</button></td>
+</div>
+    </tr>
+
+  </table>
+</div>

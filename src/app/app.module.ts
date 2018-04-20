@@ -50,6 +50,12 @@ import {CreateUstanovaComponent} from './admin-sis/create-ustanova/create-ustano
 import {AdminsisAddComponent} from './admin-sis/adminsis-add/adminsis-add.component';
 import {AdminfanAddComponent} from './admin-sis/adminfan-add/adminfan-add.component';
 import {MatSelectModule} from '@angular/material/select';
+import { ProfilRegKorisnikaComponent } from './profil-reg-korisnika/profil-reg-korisnika.component';
+import { PozoristaComponent } from './pozorista/pozorista.component';
+import { BioskopiComponent } from './bioskopi/bioskopi.component';
+import { PrijateljiComponent } from './prijatelji/prijatelji.component';
+import { SpisakMjestaComponent } from './spisak-mjesta/spisak-mjesta.component';
+import { PodesavanjaProfilaComponent } from './podesavanja-profila/podesavanja-profila.component';
 
 @NgModule({
   declarations: [
@@ -83,7 +89,13 @@ import {MatSelectModule} from '@angular/material/select';
     AdminUstanoveComponent,
     CreateUstanovaComponent,
     AdminsisAddComponent,
-    AdminfanAddComponent
+    AdminfanAddComponent,
+    ProfilRegKorisnikaComponent,
+    PozoristaComponent,
+    BioskopiComponent,
+    PrijateljiComponent,
+    SpisakMjestaComponent,
+    PodesavanjaProfilaComponent
 
   ],
 

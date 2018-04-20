@@ -9,3 +9,10 @@ export class Korisnik {
   adminFan: boolean;
   tipKorisnika: string;
 }
+
+export class Prijatelj {
+  id: number;
+  kor: Korisnik;
+  prijatelj: Korisnik;
+  status: string;
+}
