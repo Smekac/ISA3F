@@ -61,7 +61,7 @@ export class PropService {
   }
 
   reservation(id: number) {
-    return this.http.get('/api/noviRekvizit/reserve/' + id, {observe: 'response'});
+    return this.http.get('/api/noviRekvizit/rezervisi/' + id, {observe: 'response'});
   }
 
 
@@ -87,7 +87,7 @@ export class PropService {
 
   acceptBid(usedPropId: number, bidId: number) {
 
-    return this.http.get('api/KorisceniRekvizit/' + usedPropId + '/accept-bid/' + bidId, {observe: 'response'});
+    return this.http.get('api/KorisceniRekvizit/' + usedPropId + '/pirihvacena-ponuda/' + bidId, {observe: 'response'});
   }
 
 

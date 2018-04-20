@@ -22,7 +22,6 @@ export class BidListComponent implements OnInit {
 
   constructor(private propService: PropService, private router: Router) {
     // this.dataSource = new Array<number>();
-
   }
 
 

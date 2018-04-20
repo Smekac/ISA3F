@@ -100,7 +100,7 @@ export class MyAdsComponent implements OnInit {
     this.propService.acceptBid(this.idKoriscenogRekvizita, bidId)
       .subscribe(resp => {
         if (resp.status === 204) {
-          alert('Uspesno ste izabrali pobednika licitacije');
+          alert('Izabrali ste pobednika licitacije');
           // this.router.navigate(['fanpage/my-ads']);
           window.location.reload();
         } else {
