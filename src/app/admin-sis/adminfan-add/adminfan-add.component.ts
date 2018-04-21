@@ -38,6 +38,8 @@ export class AdminfanAddComponent implements OnInit {
     // this.korisnik.tipKorisnika = '';
 
     this.propService.dodajAdminFana(this.korisnik).subscribe();
+    alert('Uspesno kreirano!');
+    window.history.back();
   }
 
 }

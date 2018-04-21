@@ -44,6 +44,9 @@ export class AdminUstanoveComponent implements OnInit {
     // this.korisnik.tipKorisnika = '';
 
     this.propService.dodajAdminaUstanove(this.korisnik).subscribe();
+    alert('Uspesno kreirano!');
+    window.history.back();
+
 
   }
 

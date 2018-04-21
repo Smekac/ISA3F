@@ -38,6 +38,9 @@ export class AdminsisAddComponent implements OnInit {
     // this.korisnik.tipKorisnika = '';
 
     this.propService.dodajAdminaSis(this.korisnik).subscribe();
+    alert('Uspesno kreirano!');
+    window.history.back();
+
 
   }
 
