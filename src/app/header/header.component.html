@@ -4,8 +4,8 @@
       <span class="navbar-brand"  style="color: black"> Site </span>
     </div>
     <ul class="nav navbar-nav">
-      <li><a routerLink="/rezervacija-mjesta" style="color: blue">Rezervacija mjesta</a></li>
-      <li><a href="#" style="color: blue"> Stranica 2</a></li>
+      <!--<li><a routerLink="/rezervacija-mjesta" style="color: blue">Rezervacija mjesta</a></li>-->
+      <li><a style="color: blue"> Stranica 2</a></li>
       <li><a routerLink="/fan-zone" style="color: blue">Fan Zona</a></li>
     </ul>
 
@@ -32,6 +32,7 @@
       <li><a href="/home-page" style="color: darkblue;"><p>Ulogovao se: <b> {{korisnik.username}} </b></p></a></li>
       <li *ngIf="tip"><a href="/admin-profil" style="color: deepskyblue"> <b> AdminFan Profil </b> </a></li>
       <li *ngIf="sisTip"><a href="/adminsis/admin-sis" style="color: deepskyblue"> <b> Profil admina sistema </b> </a>
+      </li> <li *ngIf="regTip"><a href="/profil-reg-korisnika" style="color: deepskyblue"> <b> Moj profil</b> </a>
       </li>
     </ul>
 

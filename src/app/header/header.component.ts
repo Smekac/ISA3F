@@ -14,6 +14,8 @@ export class HeaderComponent implements OnInit {
   korisnik: Korisnik;
   tip: boolean;
   sisTip: boolean;
+  regTip: boolean;
+
 
 
   constructor(private korisnikService: KorisnikService, private router: Router) {
@@ -38,6 +40,14 @@ export class HeaderComponent implements OnInit {
     } else {
       this.korisnik.adminFan = false; // MADA MOGU I PREKO ID DA PROVERIM
       this.tip = false;
+    }
+
+
+    if (this.korisnik.tipKorisnika === 'REGPOSETILAC') {
+      this.regTip = true;
+    }else {
+      this.regTip = true;
+
     }
 
   }
